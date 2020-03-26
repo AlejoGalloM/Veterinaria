@@ -5,7 +5,7 @@ import com.veterinaria.veterinaria.util.Validator;
 
 import java.io.Serializable;
 
-public class RegistroPaciente {
+public class Paciente {
 
     private static final String ESPECIE_PACIENTE_REQUERIDA = "LA ESPECIE DEL PACIENTE NO PUEDE ESTAR VACIA";
     private static final String RAZA_PACIENTE_REQUERIDA = "LA RAZA DEL PACIENTE NO PUEDE ESTAR VACIA";
@@ -15,10 +15,10 @@ public class RegistroPaciente {
     private String especie;
     private String raza;
     private Integer peso;
-    private RegistroPropietario propietario;
+    private Propietario propietario;
     private Serializable codigoPaciente;
 
-    public RegistroPaciente() {
+    private Paciente() {
         super();
     }
 
@@ -27,7 +27,7 @@ public class RegistroPaciente {
         private String especie;
         private String raza;
         private Integer peso;
-        private RegistroPropietario propietario;
+        private Propietario propietario;
         private Serializable codigoPaciente;
 
         public pacienteBuilder setNombre(String nombre) {
@@ -50,7 +50,7 @@ public class RegistroPaciente {
             return this;
         }
 
-        public pacienteBuilder setPropietario(RegistroPropietario propietario) {
+        public pacienteBuilder setPropietario(Propietario propietario) {
             this.propietario = propietario;
             return this;
         }
@@ -60,8 +60,8 @@ public class RegistroPaciente {
             return this;
         }
 
-        public RegistroPaciente build() throws BussinesException {
-            RegistroPaciente paciente = new RegistroPaciente();
+        public Paciente build() throws BussinesException {
+            Paciente paciente = new Paciente();
             paciente.nombre = this.nombre;
             Validator.validarEspecie(especie, ESPECIE_PACIENTE_REQUERIDA);
             paciente.especie = this.especie;

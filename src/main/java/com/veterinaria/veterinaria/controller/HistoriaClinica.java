@@ -12,11 +12,11 @@ public class HistoriaClinica {
 
     private String procedimientos;
     private String medicamentos;
-    private RegistroPaciente codigoPaciente;
-    private RegistroPropietario codigoPropietario;
+    private Paciente codigoPaciente;
+    private Propietario codigoPropietario;
     private Serializable codigoHistoria;
 
-    public HistoriaClinica() {
+    private HistoriaClinica() {
         super();
     }
 
@@ -24,8 +24,8 @@ public class HistoriaClinica {
 
         private String procedimientos;
         private String medicamentos;
-        private RegistroPaciente codigoPaciente;
-        private RegistroPropietario codigoPropietario;
+        private Paciente codigoPaciente;
+        private Propietario codigoPropietario;
         private Serializable codigoHistoria;
 
         public historiaBuilder setProcedimientos(String procedimientos) {
@@ -38,12 +38,12 @@ public class HistoriaClinica {
             return this;
         }
 
-        public historiaBuilder setRegistroPaciente(RegistroPaciente codigoPaciente) {
+        public historiaBuilder setRegistroPaciente(Paciente codigoPaciente) {
             this.codigoPaciente = codigoPaciente;
             return this;
         }
 
-        public historiaBuilder setRegistroPropietario(RegistroPropietario codigoPropietario) {
+        public historiaBuilder setRegistroPropietario(Propietario codigoPropietario) {
             this.codigoPropietario = codigoPropietario;
             return this;
         }

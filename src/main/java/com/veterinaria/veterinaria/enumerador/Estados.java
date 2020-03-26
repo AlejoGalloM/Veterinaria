@@ -1,5 +1,5 @@
 package com.veterinaria.veterinaria.enumerador;
 
-public enum EstadosPaciente {
+public enum Estados {
     RECUPERACION,CIRUGIA,INGRESO,SALIDA,TRIAJE,ALTA
 }

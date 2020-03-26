@@ -6,7 +6,7 @@ import com.veterinaria.veterinaria.util.Validator;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
 
-public class RegistroPropietario {
+public class Propietario {
 
     private static final String TELEFONO_PROPIETARIO_OBLIGATORIO = "EL TELEFONO DEL PROPIETARIO NO ´PUEDE ESTAR VACIO";
     private static final String NOMBRE_PRIPIETARIO_OBLIGATORIO = "EL NOMBRE DEL PROPIETARIO NO PUEDE ESTAR VACIO";
@@ -17,9 +17,9 @@ public class RegistroPropietario {
     private String direccion;
     private Email Email;
     private Serializable codigoPropietario;
-    private RegistroPaciente codigoPaciente;
+    private Paciente codigoPaciente;
 
-    public RegistroPropietario() {
+    private Propietario() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class RegistroPropietario {
         private String telefono;
         private String direccion;
         private Email Email;
-        private RegistroPaciente codigoPaciente;
+        private Paciente codigoPaciente;
         private Serializable codigoPropietario;
 
 
@@ -65,7 +65,7 @@ public class RegistroPropietario {
             return this;
         }
 
-        public PropietarioBuilder setCodigoPaciente(RegistroPaciente codigoPaciente) {
+        public PropietarioBuilder setCodigoPaciente(Paciente codigoPaciente) {
             this.codigoPaciente = codigoPaciente;
             return this;
         }
@@ -75,8 +75,8 @@ public class RegistroPropietario {
             return this;
         }
 
-        public RegistroPropietario build() throws BussinesException {
-            RegistroPropietario propietario = new RegistroPropietario();
+        public Propietario build() throws BussinesException {
+            Propietario propietario = new Propietario();
             Validator.validarNombrePropietario(nombre,NOMBRE_PRIPIETARIO_OBLIGATORIO );
             propietario.nombre = this.nombre;
             propietario.apellido = this.apellido;
