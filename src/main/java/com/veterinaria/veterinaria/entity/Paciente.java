@@ -18,6 +18,7 @@ public class Paciente {
     private Propietario propietario;
     private Serializable codigoPaciente;
 
+
     private Paciente() {
         super();
     }
@@ -29,35 +30,30 @@ public class Paciente {
         private Integer peso;
         private Propietario propietario;
         private Serializable codigoPaciente;
+        private static final long serialVersionUID = 8799656478674716638L;
 
-        public pacienteBuilder setNombre(String nombre) {
-            this.nombre = nombre;
-            return this;
+        public String getNombre() {
+            return nombre;
         }
 
-        public pacienteBuilder setEspecie(String especie) {
-            this.especie = especie;
-            return this;
+        public String getEspecie() {
+            return especie;
         }
 
-        public pacienteBuilder setRaza(String raza) {
-            this.raza = raza;
-            return this;
+        public String getRaza() {
+            return raza;
         }
 
-        public pacienteBuilder setPeso(Integer peso) {
-            this.peso = peso;
-            return this;
+        public Integer getPeso() {
+            return peso;
         }
 
-        public pacienteBuilder setPropietario(Propietario propietario) {
-            this.propietario = propietario;
-            return this;
+        public Propietario getPropietario() {
+            return propietario;
         }
 
-        public pacienteBuilder setCodigoPorpietario(Serializable codigoPaciente) {
-            this.codigoPaciente = codigoPaciente;
-            return this;
+        public Serializable getCodigoPaciente() {
+            return codigoPaciente;
         }
 
         public Paciente build() throws BussinesException {

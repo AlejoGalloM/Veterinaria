@@ -27,30 +27,26 @@ public class HistoriaClinica {
         private Paciente codigoPaciente;
         private Propietario codigoPropietario;
         private Serializable codigoHistoria;
+        private static final long serialVersionUID = 8799656478674716638L;
 
-        public historiaBuilder setProcedimientos(String procedimientos) {
-            this.procedimientos = procedimientos;
-            return this;
+        public String getProcedimientos() {
+            return procedimientos;
         }
 
-        public historiaBuilder setMedicamentos(String medicamentos) {
-            this.medicamentos = medicamentos;
-            return this;
+        public String getMedicamentos() {
+            return medicamentos;
         }
 
-        public historiaBuilder setRegistroPaciente(Paciente codigoPaciente) {
-            this.codigoPaciente = codigoPaciente;
-            return this;
+        public Paciente getCodigoPaciente() {
+            return codigoPaciente;
         }
 
-        public historiaBuilder setRegistroPropietario(Propietario codigoPropietario) {
-            this.codigoPropietario = codigoPropietario;
-            return this;
+        public Propietario getCodigoPropietario() {
+            return codigoPropietario;
         }
 
-        public historiaBuilder setCodigoHistoria(Serializable codigoHistoria) {
-            this.codigoHistoria = codigoHistoria;
-            return this;
+        public Serializable getCodigoHistoria() {
+            return codigoHistoria;
         }
 
         public HistoriaClinica build() throws BussinesException {

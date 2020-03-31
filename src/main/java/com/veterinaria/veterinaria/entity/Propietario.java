@@ -33,55 +33,48 @@ public class Propietario {
         private Email Email;
         private Paciente codigoPaciente;
         private Serializable codigoPropietario;
+        private static final long serialVersionUID = 8799656478674716638L;
 
 
-        public PropietarioBuilder setNombre(String nombre) {
-            this.nombre = nombre;
-            return this;
+        public String getNombre() {
+            return nombre;
         }
 
-        public PropietarioBuilder setApellido(String apellido) {
-            this.apellido = apellido;
-            return this;
+        public String getApellido() {
+            return apellido;
         }
 
-        public PropietarioBuilder setId(String id) {
-            this.id = id;
-            return this;
+        public String getId() {
+            return id;
         }
 
-        public PropietarioBuilder setTelefono(String telefono) {
-            this.telefono = telefono;
-            return this;
+        public String getTelefono() {
+            return telefono;
         }
 
-        public PropietarioBuilder setDireccion(String direccion) {
-            this.direccion = direccion;
-            return this;
+        public String getDireccion() {
+            return direccion;
         }
 
-        public PropietarioBuilder setEmail(javax.validation.constraints.Email email) {
-            Email = email;
-            return this;
+        public javax.validation.constraints.Email getEmail() {
+            return Email;
         }
 
-        public PropietarioBuilder setCodigoPaciente(Paciente codigoPaciente) {
-            this.codigoPaciente = codigoPaciente;
-            return this;
+        public Paciente getCodigoPaciente() {
+            return codigoPaciente;
         }
 
-        public PropietarioBuilder setCodigoPropietario(Serializable codigoPropietario) {
-            this.codigoPropietario = codigoPropietario;
-            return this;
+        public Serializable getCodigoPropietario() {
+            return codigoPropietario;
         }
 
         public Propietario build() throws BussinesException {
             Propietario propietario = new Propietario();
-            Validator.validarNombrePropietario(nombre,NOMBRE_PRIPIETARIO_OBLIGATORIO );
+            Validator.validarNombrePropietario(nombre, NOMBRE_PRIPIETARIO_OBLIGATORIO);
             propietario.nombre = this.nombre;
             propietario.apellido = this.apellido;
             propietario.id = this.id;
-            Validator.validarTelefono(telefono,TELEFONO_PROPIETARIO_OBLIGATORIO);
+            Validator.validarTelefono(telefono, TELEFONO_PROPIETARIO_OBLIGATORIO);
             propietario.telefono = this.telefono;
             propietario.direccion = this.direccion;
             propietario.Email = this.Email;
