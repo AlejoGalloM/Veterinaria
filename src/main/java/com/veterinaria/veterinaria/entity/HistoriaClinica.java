@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.controller;
+package com.veterinaria.veterinaria.entity;
 
 import com.veterinaria.veterinaria.bussinesException.BussinesException;
 import com.veterinaria.veterinaria.util.Validator;
