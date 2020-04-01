@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.util;
+package com.veterinaria.veterinaria.dominio.util;
 
 
 import com.veterinaria.veterinaria.excepcion.*;

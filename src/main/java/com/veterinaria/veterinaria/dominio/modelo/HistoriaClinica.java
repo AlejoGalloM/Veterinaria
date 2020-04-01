@@ -1,6 +1,6 @@
-package com.veterinaria.veterinaria.modelo;
+package com.veterinaria.veterinaria.dominio.modelo;
 
-import com.veterinaria.veterinaria.util.ValidatorArgumento;
+import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 
 import java.io.Serializable;
 

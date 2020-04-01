@@ -1,6 +1,6 @@
-package com.veterinaria.veterinaria.modelo;
+package com.veterinaria.veterinaria.dominio.modelo;
 
-import com.veterinaria.veterinaria.util.ValidatorArgumento;
+import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 
 import java.io.Serializable;
 
@@ -19,9 +19,9 @@ public class Paciente {
 
     public Paciente(String nombre, String especie, String raza, Integer peso, Propietario propietario,
                     Serializable codigoPaciente) {
-        ValidatorArgumento.validarEspecieNula(especie,ESPECIE_PACIENTE_REQUERIDA);
+        ValidatorArgumento.validarEspecieNula(especie, ESPECIE_PACIENTE_REQUERIDA);
         ValidatorArgumento.validarRazaNula(raza, RAZA_PACIENTE_REQUERIDA);
-        ValidatorArgumento.validarPesoNulo(peso,PESO_PACIENTE_REQUERIDA);
+        ValidatorArgumento.validarPesoNulo(peso, PESO_PACIENTE_REQUERIDA);
         this.nombre = nombre;
         this.especie = especie;
         this.raza = raza;

@@ -2,7 +2,7 @@ package com.veterinaria.veterinaria.argumento;
 
 
 import com.veterinaria.veterinaria.excepcion.*;
-import com.veterinaria.veterinaria.util.ValidatorArgumento;
+import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -18,76 +18,79 @@ public class ValidadorArgumentoTest {
     public static final String NOMBRE_PRIPIETARIO_OBLIGATORIO = "EL NOMBRE DEL PROPIETARIO NO PUEDE ESTAR VACIO";
 
     @Test
-    public void validarMedicamentoNoNuloTest()  {
+    public void validarMedicamentoNoNuloTest() {
         try {
             ValidatorArgumento.validarMedicamentoNulo(null,
                     MEDICAMENTOS_REQUERIDOS);
             Assertions.fail();
-        }catch (ExcepcionMedicamentoObligatorio e){
-            Assertions.assertEquals(MEDICAMENTOS_REQUERIDOS,e.getMessage());
+        } catch (ExcepcionMedicamentoObligatorio e) {
+            Assertions.assertEquals(MEDICAMENTOS_REQUERIDOS, e.getMessage());
         }
     }
 
     @Test
-    public void validarProcedimientoNoNuloTest(){
+    public void validarProcedimientoNoNuloTest() {
         try {
             ValidatorArgumento.validarProcedimientoNulo(null,
                     PROCEDIMIENTOS_REQUERIDOS);
             Assertions.fail();
-        }catch (ExcepcionProcedimientoObligatorio e){
-            Assertions.assertEquals(PROCEDIMIENTOS_REQUERIDOS,e.getMessage());
+        } catch (ExcepcionProcedimientoObligatorio e) {
+            Assertions.assertEquals(PROCEDIMIENTOS_REQUERIDOS, e.getMessage());
         }
     }
 
     @Test
-    public void validarEspecieNoNulaTest(){
+    public void validarEspecieNoNulaTest() {
         try {
             ValidatorArgumento.validarEspecieNula(null,
                     ESPECIE_PACIENTE_REQUERIDA);
             Assertions.fail();
-        }catch (ExcepcionEspeciePacienteObligatoria e){
-            Assertions.assertEquals(ESPECIE_PACIENTE_REQUERIDA,e.getMessage());
+        } catch (ExcepcionEspeciePacienteObligatoria e) {
+            Assertions.assertEquals(ESPECIE_PACIENTE_REQUERIDA, e.getMessage());
         }
     }
 
     @Test
-    public void validarRazaNoNulaTest(){
+    public void validarRazaNoNulaTest() {
         try {
             ValidatorArgumento.validarRazaNula(null,
                     RAZA_PACIENTE_REQUERIDA);
             Assertions.fail();
-        }catch (ExcepcionRazaPacienteObligatoria e){
-            Assertions.assertEquals(RAZA_PACIENTE_REQUERIDA,e.getMessage());
+        } catch (ExcepcionRazaPacienteObligatoria e) {
+            Assertions.assertEquals(RAZA_PACIENTE_REQUERIDA, e.getMessage());
         }
     }
+
     @Test
-    public void validarPesoNoNulaTest(){
+    public void validarPesoNoNulaTest() {
         try {
             ValidatorArgumento.validarPesoNulo(null,
                     PESO_PACIENTE_REQUERIDA);
             Assertions.fail();
-        }catch (ExcepcionPesoPacienteObligatorio e){
-            Assertions.assertEquals(PESO_PACIENTE_REQUERIDA,e.getMessage());
+        } catch (ExcepcionPesoPacienteObligatorio e) {
+            Assertions.assertEquals(PESO_PACIENTE_REQUERIDA, e.getMessage());
         }
     }
+
     @Test
-    public void validarNombrePropietarioNoNulaTest(){
+    public void validarNombrePropietarioNoNulaTest() {
         try {
             ValidatorArgumento.validarNombrePropietarioNulo(null,
                     NOMBRE_PRIPIETARIO_OBLIGATORIO);
             Assertions.fail();
-        }catch (ExcepcionNombrePropietarioObligatorio e){
-            Assertions.assertEquals(NOMBRE_PRIPIETARIO_OBLIGATORIO,e.getMessage());
+        } catch (ExcepcionNombrePropietarioObligatorio e) {
+            Assertions.assertEquals(NOMBRE_PRIPIETARIO_OBLIGATORIO, e.getMessage());
         }
     }
+
     @Test
-    public void validarTelefonoPropietarioNoNulaTest(){
+    public void validarTelefonoPropietarioNoNulaTest() {
         try {
             ValidatorArgumento.validarTelefonoNulo(null,
                     TELEFONO_PROPIETARIO_OBLIGATORIO);
             Assertions.fail();
-        }catch (ExcepcionTelefonoPropietarioObligatorio e){
-            Assertions.assertEquals(TELEFONO_PROPIETARIO_OBLIGATORIO,e.getMessage());
+        } catch (ExcepcionTelefonoPropietarioObligatorio e) {
+            Assertions.assertEquals(TELEFONO_PROPIETARIO_OBLIGATORIO, e.getMessage());
         }
     }
 }
