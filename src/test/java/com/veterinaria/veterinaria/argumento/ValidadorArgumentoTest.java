@@ -1,7 +1,7 @@
 package com.veterinaria.veterinaria.argumento;
 
 
-import com.veterinaria.veterinaria.excepcion.*;
+import com.veterinaria.veterinaria.dominio.excepcion.*;
 import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;

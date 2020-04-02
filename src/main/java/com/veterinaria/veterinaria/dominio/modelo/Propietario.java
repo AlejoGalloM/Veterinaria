@@ -20,6 +20,7 @@ public class Propietario {
     private Email Email;
     private Serializable codigoPropietario;
     private Paciente codigoPaciente;
+    private static final long serialVersionUID = 8799656478674716638L;
 
     public Propietario(String nombre, String apellido, String id, String telefono, String direccion,
                        javax.validation.constraints.Email email, Serializable codigoPropietario,

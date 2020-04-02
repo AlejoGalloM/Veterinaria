@@ -1,7 +1,7 @@
 package com.veterinaria.veterinaria.dominio.util;
 
 
-import com.veterinaria.veterinaria.excepcion.*;
+import com.veterinaria.veterinaria.dominio.excepcion.*;
 
 public class ValidatorArgumento {
     public static void validarEspecieNula(String especie, String mensaje) {

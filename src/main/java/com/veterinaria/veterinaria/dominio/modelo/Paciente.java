@@ -16,6 +16,7 @@ public class Paciente {
     private Integer peso;
     private Propietario propietario;
     private Serializable codigoPaciente;
+    private static final long serialVersionUID = 8799656478674716638L;
 
     public Paciente(String nombre, String especie, String raza, Integer peso, Propietario propietario,
                     Serializable codigoPaciente) {

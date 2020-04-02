@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.excepcion;
+package com.veterinaria.veterinaria.dominio.excepcion;
 
 public class ExcepcionRazaPacienteObligatoria extends RuntimeException {
     public ExcepcionRazaPacienteObligatoria(String mensaje) {
