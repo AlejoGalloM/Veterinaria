@@ -1,14 +1,15 @@
-package com.veterinaria.veterinaria.dominio.modelo;
+package com.veterinaria.veterinaria.testDataBuilder.modelo;
 
 import java.io.Serializable;
 
-public class HistoriaClinicaTestDataBuilder {
+public class HistoriaClinicaTestDataBuilder implements IHistoriaClinica {
 
     private String procedimientos;
     private String medicamentos;
     private Paciente codigoPaciente;
     private Propietario codigoPropietario;
     private Serializable codigoHistoria;
+
 
     public HistoriaClinicaTestDataBuilder conProcedimientos(String procedimientos) {
         this.procedimientos = procedimientos;
@@ -35,7 +36,9 @@ public class HistoriaClinicaTestDataBuilder {
         return this;
     }
 
+    @Override
     public HistoriaClinica build() {
-        return new HistoriaClinica(this.procedimientos, this.medicamentos, this.codigoPaciente, this.codigoPropietario, this.codigoHistoria);
+        return new HistoriaClinica(this.procedimientos,this.medicamentos,this.codigoPaciente,
+                this.codigoPropietario,this.codigoHistoria);
     }
 }

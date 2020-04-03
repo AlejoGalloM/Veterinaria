@@ -1,8 +1,7 @@
-package com.veterinaria.veterinaria.dominio.modelo;
+package com.veterinaria.veterinaria.testDataBuilder.modelo;
 
 
 
-import com.veterinaria.veterinaria.dominio.modelo.Paciente;
 import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 
 import javax.validation.constraints.Email;

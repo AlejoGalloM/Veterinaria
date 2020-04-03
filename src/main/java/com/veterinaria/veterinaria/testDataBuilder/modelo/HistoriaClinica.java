@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.dominio.modelo;
+package com.veterinaria.veterinaria.testDataBuilder.modelo;
 
 import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 

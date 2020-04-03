@@ -2,6 +2,7 @@ package com.veterinaria.veterinaria.argumento;
 
 
 import com.veterinaria.veterinaria.dominio.excepcion.*;
+import com.veterinaria.veterinaria.testDataBuilder.modelo.*;
 import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -22,6 +23,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarMedicamentoNulo(null,
                     MEDICAMENTOS_REQUERIDOS);
+            HistoriaClinica Historia = new HistoriaClinicaTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionMedicamentoObligatorio e) {
             Assertions.assertEquals(MEDICAMENTOS_REQUERIDOS, e.getMessage());
@@ -33,6 +36,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarProcedimientoNulo(null,
                     PROCEDIMIENTOS_REQUERIDOS);
+            HistoriaClinica historia = new HistoriaClinicaTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionProcedimientoObligatorio e) {
             Assertions.assertEquals(PROCEDIMIENTOS_REQUERIDOS, e.getMessage());
@@ -44,6 +49,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarEspecieNula(null,
                     ESPECIE_PACIENTE_REQUERIDA);
+            Paciente paciente = new PacienteTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionEspeciePacienteObligatoria e) {
             Assertions.assertEquals(ESPECIE_PACIENTE_REQUERIDA, e.getMessage());
@@ -55,6 +62,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarRazaNula(null,
                     RAZA_PACIENTE_REQUERIDA);
+            Paciente paciente = new PacienteTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionRazaPacienteObligatoria e) {
             Assertions.assertEquals(RAZA_PACIENTE_REQUERIDA, e.getMessage());
@@ -66,6 +75,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarPesoNulo(null,
                     PESO_PACIENTE_REQUERIDA);
+            Paciente paciente = new PacienteTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionPesoPacienteObligatorio e) {
             Assertions.assertEquals(PESO_PACIENTE_REQUERIDA, e.getMessage());
@@ -77,6 +88,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarNombrePropietarioNulo(null,
                     NOMBRE_PRIPIETARIO_OBLIGATORIO);
+            Propietario propietario = new PropietarioTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionNombrePropietarioObligatorio e) {
             Assertions.assertEquals(NOMBRE_PRIPIETARIO_OBLIGATORIO, e.getMessage());
@@ -88,6 +101,8 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarTelefonoNulo(null,
                     TELEFONO_PROPIETARIO_OBLIGATORIO);
+            Propietario propietario = new PropietarioTestDataBuilder()
+                    .build();
             Assertions.fail();
         } catch (ExcepcionTelefonoPropietarioObligatorio e) {
             Assertions.assertEquals(TELEFONO_PROPIETARIO_OBLIGATORIO, e.getMessage());

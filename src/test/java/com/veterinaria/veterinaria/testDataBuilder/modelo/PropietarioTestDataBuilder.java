@@ -1,9 +1,8 @@
-package com.veterinaria.veterinaria.dominio.modelo;
+package com.veterinaria.veterinaria.testDataBuilder.modelo;
 
-import javax.validation.constraints.Email;
 import java.io.Serializable;
 
-public class PropietarioTestDataBuilder {
+public class PropietarioTestDataBuilder implements IPropietario {
     private String nombre;
     private String apellido;
     private String id;
@@ -53,6 +52,7 @@ public class PropietarioTestDataBuilder {
         return this;
     }
 
+    @Override
     public Propietario build(){
         return new Propietario(this.nombre,this.apellido,this.id,this.telefono,this.direccion,this.Email,this.codigoPropietario,this.codigoPaciente);
     }

@@ -1,8 +1,8 @@
-package com.veterinaria.veterinaria.dominio.modelo;
+package com.veterinaria.veterinaria.testDataBuilder.modelo;
 
 import java.io.Serializable;
 
-public class PacienteTestDataBuilder {
+public class PacienteTestDataBuilder implements IPaciente {
     private String nombre;
     private String especie;
     private String raza;
@@ -41,6 +41,7 @@ public class PacienteTestDataBuilder {
         return this;
     }
 
+    @Override
     public Paciente build() {
         return new Paciente(this.nombre, this.especie, this.raza, this.peso, this.propietario, this.codigoPaciente);
     }
