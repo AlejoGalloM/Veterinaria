@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.testDataBuilder.modelo;
+package com.veterinaria.veterinaria.dominio.modelo;
 
 public interface IPropietario {
     public Propietario build();
