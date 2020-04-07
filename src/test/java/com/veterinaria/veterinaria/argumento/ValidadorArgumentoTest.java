@@ -23,7 +23,7 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarMedicamentoNulo(null,
                     MEDICAMENTOS_REQUERIDOS);
-            HistoriaClinica Historia = new HistoriaClinicaTestDataBuilder()
+            HistoriaClinica historiaClinica = new HistoriaClinicaTestDataBuilder()
                     .build();
             Assertions.fail();
         } catch (ExcepcionMedicamentoObligatorio e) {
@@ -36,7 +36,7 @@ public class ValidadorArgumentoTest {
         try {
             ValidatorArgumento.validarProcedimientoNulo(null,
                     PROCEDIMIENTOS_REQUERIDOS);
-            HistoriaClinica historia = new HistoriaClinicaTestDataBuilder()
+            HistoriaClinica historiaClinica = new HistoriaClinicaTestDataBuilder()
                     .build();
             Assertions.fail();
         } catch (ExcepcionProcedimientoObligatorio e) {

@@ -1,7 +1,10 @@
 package com.veterinaria.veterinaria.dominio.modelo;
 
+import lombok.Setter;
+
 import java.io.Serializable;
 
+@Setter
 public class PacienteTestDataBuilder implements IPaciente {
     private String nombre;
     private String especie;
@@ -11,38 +14,10 @@ public class PacienteTestDataBuilder implements IPaciente {
     private Serializable codigoPaciente;
     private static final long serialVersionUID = 8799656478674716638L;
 
-    public PacienteTestDataBuilder conNombre(String nombre) {
-        this.nombre = nombre;
-        return this;
-    }
-
-    public PacienteTestDataBuilder conEspecie(String especie) {
-        this.especie = especie;
-        return this;
-    }
-
-    public PacienteTestDataBuilder conRaza(String raza) {
-        this.raza = raza;
-        return this;
-    }
-
-    public PacienteTestDataBuilder conPeso(Integer peso) {
-        this.peso = peso;
-        return this;
-    }
-
-    public PacienteTestDataBuilder conPropietario(Propietario propietario) {
-        this.propietario = propietario;
-        return this;
-    }
-
-    public PacienteTestDataBuilder conCodigoPaciente(Serializable codigoPaciente) {
-        this.codigoPaciente = codigoPaciente;
-        return this;
-    }
 
     @Override
     public Paciente build() {
-        return new Paciente(this.nombre, this.especie, this.raza, this.peso, this.propietario, this.codigoPaciente);
+        return new Paciente(this.nombre, this.especie, this.raza, this.peso,
+                this.propietario, this.codigoPaciente);
     }
 }
