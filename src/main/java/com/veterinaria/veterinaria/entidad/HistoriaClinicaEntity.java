@@ -4,13 +4,11 @@ import com.veterinaria.veterinaria.dominio.modelo.Paciente;
 import com.veterinaria.veterinaria.dominio.modelo.Propietario;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
-@Entity(name="Historia_Clinica")
+@Entity
+@Table( name = "HistoriaClinica")
 public class HistoriaClinicaEntity {
 
     @Id
@@ -23,5 +21,4 @@ public class HistoriaClinicaEntity {
     private String medicamentos;
     @Column(name = "codigoPrpietario")
     private Integer codigoPropietario;
-
 }
