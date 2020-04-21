@@ -15,7 +15,14 @@ public class ValidatorArgumento {
             throw new ExcepcionRazaPacienteObligatoria(mensaje);
         }
     }
+    //preferible utilizar este metodo con el Object, este no importa si es un String o un Integer
+    public static void validadorArgumento(Object valor, String mensaje){
+        if(valor==null){
 
+        }
+    }
+
+    //Preferible utilizar int en ves De Integer
     public static void validarPesoNulo(Integer peso, String mensaje) {
         if (peso == null) {
             throw new ExcepcionPesoPacienteObligatorio(mensaje);
