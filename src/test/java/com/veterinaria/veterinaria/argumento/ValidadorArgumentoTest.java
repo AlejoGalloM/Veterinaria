@@ -3,7 +3,7 @@ package com.veterinaria.veterinaria.argumento;
 
 import com.veterinaria.veterinaria.dominio.excepcion.*;
 import com.veterinaria.veterinaria.dominio.modelo.*;
-import com.veterinaria.veterinaria.dominio.util.ValidatorArgumento;
+import com.veterinaria.veterinaria.dominio.util.ValidadorArgumento;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -21,7 +21,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarMedicamentoNoNuloTest() {
         try {
-            ValidatorArgumento.validarMedicamentoNulo(null,
+            ValidadorArgumento.validarMedicamentoNulo(null,
                     MEDICAMENTOS_REQUERIDOS);
             HistoriaClinica historiaClinica = new HistoriaClinicaTestDataBuilder()
                     .build();
@@ -34,7 +34,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarProcedimientoNoNuloTest() {
         try {
-            ValidatorArgumento.validarProcedimientoNulo(null,
+            ValidadorArgumento.validarProcedimientoNulo(null,
                     PROCEDIMIENTOS_REQUERIDOS);
             HistoriaClinica historiaClinica = new HistoriaClinicaTestDataBuilder()
                     .build();
@@ -47,7 +47,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarEspecieNoNulaTest() {
         try {
-            ValidatorArgumento.validarEspecieNula(null,
+            ValidadorArgumento.validarEspecieNula(null,
                     ESPECIE_PACIENTE_REQUERIDA);
             Paciente paciente = new PacienteTestDataBuilder()
                     .build();
@@ -60,7 +60,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarRazaNoNulaTest() {
         try {
-            ValidatorArgumento.validarRazaNula(null,
+            ValidadorArgumento.validarRazaNula(null,
                     RAZA_PACIENTE_REQUERIDA);
             Paciente paciente = new PacienteTestDataBuilder()
                     .build();
@@ -73,7 +73,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarPesoNoNulaTest() {
         try {
-            ValidatorArgumento.validarPesoNulo(null,
+            ValidadorArgumento.validarPesoNulo(null,
                     PESO_PACIENTE_REQUERIDA);
             Paciente paciente = new PacienteTestDataBuilder()
                     .build();
@@ -86,7 +86,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarNombrePropietarioNoNulaTest() {
         try {
-            ValidatorArgumento.validarNombrePropietarioNulo(null,
+            ValidadorArgumento.validarNombrePropietarioNulo(null,
                     NOMBRE_PRIPIETARIO_OBLIGATORIO);
             Propietario propietario = new PropietarioTestDataBuilder()
                     .build();
@@ -99,7 +99,7 @@ public class ValidadorArgumentoTest {
     @Test
     public void validarTelefonoPropietarioNoNulaTest() {
         try {
-            ValidatorArgumento.validarTelefonoNulo(null,
+            ValidadorArgumento.validarTelefonoNulo(null,
                     TELEFONO_PROPIETARIO_OBLIGATORIO);
             Propietario propietario = new PropietarioTestDataBuilder()
                     .build();

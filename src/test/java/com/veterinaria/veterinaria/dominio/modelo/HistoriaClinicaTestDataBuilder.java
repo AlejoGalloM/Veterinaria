@@ -11,11 +11,11 @@ public class HistoriaClinicaTestDataBuilder implements IHistoriaClinica {
     private String medicamentos;
     private Paciente codigoPaciente;
     private Propietario codigoPropietario;
-    private Serializable codigoHistoria;
+    private Integer codigoHistoria;
 
     @Override
     public HistoriaClinica build() {
-        return new HistoriaClinica(this.procedimientos, this.medicamentos, this.codigoPaciente,
-                this.codigoPropietario, this.codigoHistoria);
+        return new HistoriaClinica(this.codigoHistoria, this.procedimientos, this.medicamentos,
+                this.codigoPaciente, this.codigoPropietario);
     }
 }

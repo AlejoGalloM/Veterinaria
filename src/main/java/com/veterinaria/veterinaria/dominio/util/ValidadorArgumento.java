@@ -3,7 +3,7 @@ package com.veterinaria.veterinaria.dominio.util;
 
 import com.veterinaria.veterinaria.dominio.excepcion.*;
 
-public class ValidatorArgumento {
+public class ValidadorArgumento {
     public static void validarEspecieNula(String especie, String mensaje) {
         if (especie == null) {
             throw new ExcepcionEspeciePacienteObligatoria(mensaje);

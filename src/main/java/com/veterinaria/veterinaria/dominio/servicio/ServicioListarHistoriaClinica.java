@@ -8,8 +8,6 @@ import java.util.List;
 
 @Service
 public class ServicioListarHistoriaClinica {
-
-
     //Inyeccion de dependencias
     public RepositorioHistoriaClinica repositorioHistoriaClinica;
 
@@ -17,7 +15,7 @@ public class ServicioListarHistoriaClinica {
         this.repositorioHistoriaClinica = repositorioHistoriaClinica;
     }
 
-    public List<HistoriaClinicaEntity> ejecutar(){
+    public List<HistoriaClinicaEntity> ejecutar() {
         return repositorioHistoriaClinica.listar();
     }
 }

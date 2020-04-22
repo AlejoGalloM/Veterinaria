@@ -6,9 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter @AllArgsConstructor @NoArgsConstructor
 public class CommandHistoriaClinica {
 
     //Estos atributos deben ser los mismos del modelo

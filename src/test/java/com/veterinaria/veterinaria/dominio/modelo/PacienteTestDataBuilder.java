@@ -11,8 +11,8 @@ public class PacienteTestDataBuilder implements IPaciente {
     private String raza;
     private Integer peso;
     private Propietario propietario;
-    private Serializable codigoPaciente;
-    private static final long serialVersionUID = 8799656478674716638L;
+    private Integer codigoPaciente;
+
 
 
     @Override

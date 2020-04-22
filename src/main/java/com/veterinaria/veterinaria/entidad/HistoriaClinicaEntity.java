@@ -1,19 +1,20 @@
 package com.veterinaria.veterinaria.entidad;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.awt.List;
 
 import javax.persistence.*;
 
-@Getter
-@Entity
+@Getter @Entity
 @Table( name = "HistoriaClinica")
 public class HistoriaClinicaEntity {
 
     //Se tiene que llamar igual a los atributos del modelo
     //Lo de antes de la variable(Integer, String...) deben ser las mismas del modelo
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        @Column(name = "idHistoria", nullable = false)
+        @GeneratedValue
         private Integer codigoHistoria;
 
         @Column(name = "procedimiento", nullable = false)
@@ -23,17 +24,12 @@ public class HistoriaClinicaEntity {
         private String medicamentos;
 
         //Aqui falta un @ManyToOne o un @OneToMany o un @OneToOne todo depende de como este relacionada sus bases de datos
-        @JoinColumn(name = "codigoPaciente")
+        @ManyToOne
+        @JoinColumn
         private PacienteEntity codigoPaciente;
 
-        @Column(name = "codigoPrpietario", nullable = false)
+        @ManyToOne
+        @JoinColumn
         private PropietarioEntity codigoPropietario;
 
-    public HistoriaClinicaEntity(Integer codigoHistoria, String procedimientos, String medicamentos, PacienteEntity codigoPaciente, PropietarioEntity codigoPropietario) {
-        this.codigoHistoria = codigoHistoria;
-        this.procedimientos = procedimientos;
-        this.medicamentos = medicamentos;
-        this.codigoPaciente = codigoPaciente;
-        this.codigoPropietario = codigoPropietario;
-    }
 }

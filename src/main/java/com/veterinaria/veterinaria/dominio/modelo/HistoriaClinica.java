@@ -1,6 +1,8 @@
 package com.veterinaria.veterinaria.dominio.modelo;
 
 
+import com.veterinaria.veterinaria.dominio.util.ValidadorArgumento;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
@@ -17,10 +19,11 @@ public class HistoriaClinica {
     private Paciente codigoPaciente;
     private Propietario codigoPropietario;
 
+    public HistoriaClinica(Integer codigoHistoria, String procedimientos, String medicamentos,
+                           Paciente codigoPaciente, Propietario codigoPropietario) {
 
-    public HistoriaClinica(Integer codigoHistoria, String procedimientos, String medicamentos, Paciente codigoPaciente, Propietario codigoPropietario) {
-
-
+        ValidadorArgumento.validarMedicamentoNulo(medicamentos,MEDICAMENTOS_REQUERIDOS);
+        ValidadorArgumento.validarProcedimientoNulo(procedimientos,PROCEDIMIENTOS_REQUERIDOS);
         this.codigoHistoria = codigoHistoria;
         this.procedimientos = procedimientos;
         this.medicamentos = medicamentos;
