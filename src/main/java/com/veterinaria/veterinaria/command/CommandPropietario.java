@@ -16,6 +16,5 @@ public class CommandPropietario {
     private String telefono;
     private String direccion;
     private String Email;
-    private Paciente codigoPaciente;
 
 }

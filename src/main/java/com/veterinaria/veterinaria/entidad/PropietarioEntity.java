@@ -1,6 +1,5 @@
 package com.veterinaria.veterinaria.entidad;
 
-import com.veterinaria.veterinaria.dominio.modelo.Paciente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -30,8 +29,4 @@ public class PropietarioEntity {
 
     @Column(name = "EmailPro", nullable = false)
     private String Email;
-
-    @ManyToOne
-    @JoinColumn
-    private PacienteEntity codigoPaciente;    
 }

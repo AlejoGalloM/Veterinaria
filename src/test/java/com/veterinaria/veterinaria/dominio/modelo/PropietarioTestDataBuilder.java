@@ -11,12 +11,11 @@ public class PropietarioTestDataBuilder implements IPropietario {
     private String id;
     private String telefono;
     private String direccion;
-    private javax.validation.constraints.Email Email;
-    private Paciente codigoPaciente;
+    private String Email;
 
     @Override
     public Propietario build() {
         return new Propietario(this.nombre, this.apellido, this.id, this.telefono,
-                this.direccion, this.Email, this.codigoPaciente);
+                this.direccion, this.Email);
     }
 }

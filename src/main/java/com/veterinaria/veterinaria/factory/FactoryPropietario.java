@@ -10,6 +10,6 @@ public class FactoryPropietario {
     public Propietario craar(CommandPropietario commandPropietario){
         return new Propietario(commandPropietario.getNombre(), commandPropietario.getApellido(),
         		commandPropietario.getDireccion(),commandPropietario.getEmail(),commandPropietario.getId(),
-        		commandPropietario.getTelefono(), commandPropietario.getCodigoPaciente());
+        		commandPropietario.getTelefono());
     }
 }
