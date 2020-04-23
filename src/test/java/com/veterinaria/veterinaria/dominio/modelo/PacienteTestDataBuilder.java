@@ -13,8 +13,6 @@ public class PacienteTestDataBuilder implements IPaciente {
     private Propietario propietario;
     private Integer codigoPaciente;
 
-
-
     @Override
     public Paciente build() {
         return new Paciente(this.nombre, this.especie, this.raza, this.peso,
