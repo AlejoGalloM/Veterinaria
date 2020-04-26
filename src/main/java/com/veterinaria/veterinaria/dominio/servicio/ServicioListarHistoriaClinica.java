@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class ServicioListarHistoriaClinica {
-    //Inyeccion de dependencias
+
     public RepositorioHistoriaClinica repositorioHistoriaClinica;
 
     public ServicioListarHistoriaClinica(RepositorioHistoriaClinica repositorioHistoriaClinica) {
