@@ -5,11 +5,12 @@ import com.veterinaria.veterinaria.dominio.modelo.Propietario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
 @Getter @AllArgsConstructor @NoArgsConstructor
 public class CommandHistoriaClinica {
 
-    //Estos atributos deben ser los mismos del modelo
     private Integer codigoHistoria;
     private String procedimientos;
     private String medicamentos;
