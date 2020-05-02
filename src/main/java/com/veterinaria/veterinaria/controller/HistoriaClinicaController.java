@@ -1,7 +1,7 @@
 package com.veterinaria.veterinaria.controller;
 
-import com.veterinaria.veterinaria.dominio.servicio.ServicioListarHistoriaClinica;
-import com.veterinaria.veterinaria.entidad.HistoriaClinicaEntity;
+import com.veterinaria.veterinaria.command.CommandHistoriaClinica;
+import com.veterinaria.veterinaria.dominio.servicio.impl.ServicioListarHistoriaClinica;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +19,7 @@ public class HistoriaClinicaController {
     }
 
     @GetMapping(value = "/listar")
-    public List<HistoriaClinicaEntity> listar(){
-       return servicioListarHistoriaClinica.ejecutar();
+    public List<CommandHistoriaClinica> listar(){
+       return servicioListarHistoriaClinica.findAll();
     }
 }

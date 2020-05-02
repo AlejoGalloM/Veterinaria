@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.dominio.servicio;
+package com.veterinaria.veterinaria.dominio.servicio.impl;
 
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPaciente;
 import com.veterinaria.veterinaria.entidad.PacienteEntity;
