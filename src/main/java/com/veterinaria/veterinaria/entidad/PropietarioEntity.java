@@ -2,12 +2,15 @@ package com.veterinaria.veterinaria.entidad;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 
 
-@Entity @Getter @AllArgsConstructor
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Table(name = "Propietario")
 public class PropietarioEntity {
 

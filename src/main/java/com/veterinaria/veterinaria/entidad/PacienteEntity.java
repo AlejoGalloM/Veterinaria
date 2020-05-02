@@ -2,12 +2,14 @@ package com.veterinaria.veterinaria.entidad;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Getter
-@Entity
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
 @Table(name = "Paciente")
 public class PacienteEntity {
 
