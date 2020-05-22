@@ -11,11 +11,7 @@ import java.util.List;
 @Component
 public class FactoryHistorioClinica {
 
-    public HistoriaClinica crear(CommandHistoriaClinica commandHistoriaClinica) {
-        return new HistoriaClinica(commandHistoriaClinica.getCodigoHistoria(),
-                commandHistoriaClinica.getProcedimientos(), commandHistoriaClinica.getMedicamentos(),
-                commandHistoriaClinica.getCodigoPaciente(), commandHistoriaClinica.getCodigoPropietario());
-    }
+
 
     public List<CommandHistoriaClinica> entityToCommand(List<HistoriaClinicaEntity> listaHistoriaClinicaEntity) {
         List<CommandHistoriaClinica> listaCommandHistoriaClinica = new ArrayList<>();
