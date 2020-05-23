@@ -18,6 +18,6 @@ public class PropietarioController {
     public ServicioListarPropietario servicioListarPropietario;
 
 
-    @GetMapping(value = "/listar")
+    @GetMapping()
     public List<CommandPropietario> listar() { return servicioListarPropietario.findAll();}
 }

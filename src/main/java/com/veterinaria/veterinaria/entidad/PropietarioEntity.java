@@ -16,7 +16,7 @@ public class PropietarioEntity {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Integer id;
 
     @Column(name = "NombrePro", nullable = false)
     private String nombre;

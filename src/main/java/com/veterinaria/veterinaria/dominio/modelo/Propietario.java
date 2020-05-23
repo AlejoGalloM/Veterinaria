@@ -12,14 +12,14 @@ public class Propietario {
 
     private String nombre;
     private String apellido;
-    private String id;
+    private Integer id;
     private String telefono;
     private String direccion;
     private String Email;
     //Preferible utilizar Integer o Long en ves de Serialiazable
 
 
-	public Propietario(String nombre, String apellido, String id, String telefono, String direccion, String email) {
+	public Propietario(String nombre, String apellido, Integer id, String telefono, String direccion, String email) {
 
 		ValidadorArgumento.validarNombrePropietarioNulo(nombre,NOMBRE_PRIPIETARIO_OBLIGATORIO);
 		ValidadorArgumento.validarTelefonoNulo(telefono, TELEFONO_PROPIETARIO_OBLIGATORIO);

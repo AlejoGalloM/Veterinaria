@@ -15,7 +15,7 @@ public class CommandPropietario {
 
     private String nombre;
     private String apellido;
-    private String id;
+    private Integer id;
     private String telefono;
     private String direccion;
     private String Email;
