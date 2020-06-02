@@ -24,4 +24,8 @@ public class ServicioListarPaciente {
         return factoryPaciente.entityToCommand(repositorioPaciente.listar());
 
     }
+
+    public String registrarPaciente(CommandPaciente commandPaciente) {
+        return "";
+    }
 }
