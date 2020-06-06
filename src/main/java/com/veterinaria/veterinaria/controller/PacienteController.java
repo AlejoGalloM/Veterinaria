@@ -1,6 +1,7 @@
 package com.veterinaria.veterinaria.controller;
 
 import com.veterinaria.veterinaria.command.CommandPaciente;
+import com.veterinaria.veterinaria.dominio.servicio.impl.ServicioCrearPaciente;
 import com.veterinaria.veterinaria.dominio.servicio.impl.ServicioListarPaciente;
 import com.veterinaria.veterinaria.entidad.PacienteEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class PacienteController {
     @Autowired
     public ServicioListarPaciente servicioListarPaciente;
 
+    @Autowired
+    public ServicioCrearPaciente servicioCrearPaciente;
+
     @GetMapping()
     public List<CommandPaciente> listar() {
         return servicioListarPaciente.findAll();
@@ -22,6 +26,6 @@ public class PacienteController {
 
     @PostMapping("/registrar")
     public String registroPaciente(@RequestBody CommandPaciente commandPaciente){
-        return servicioListarPaciente.registrarPaciente(commandPaciente);
+        return servicioCrearPaciente.registrarPaciente(commandPaciente);
     }
 }

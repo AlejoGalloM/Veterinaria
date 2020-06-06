@@ -25,7 +25,5 @@ public class ServicioListarPaciente {
 
     }
 
-    public String registrarPaciente(CommandPaciente commandPaciente) {
-        return "";
-    }
+
 }
