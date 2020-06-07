@@ -9,5 +9,5 @@ public interface RepositorioPaciente {
     List<PacienteEntity> listar();
 
 
-
+    void save(PacienteEntity pacienteEntity);
 }

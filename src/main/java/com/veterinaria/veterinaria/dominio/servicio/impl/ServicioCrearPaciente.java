@@ -20,7 +20,7 @@ public class ServicioCrearPaciente {
     private static final String PACINETE_REGISTRADO_EXITOSAMENTE = "El paciente se ha registrado exitosamente";
 
     @Autowired
-    public RepositorioPacienteJpa repositorioPacienteJpa;
+    public RepositorioPaciente repositorioPaciente;
 
     @Autowired
     public FactoryPaciente factoryPaciente;
@@ -39,7 +39,7 @@ public class ServicioCrearPaciente {
         pacienteEntity.setNombre(commandPaciente.getNombre());
         pacienteEntity.setPeso(commandPaciente.getPeso());
         pacienteEntity.setRaza(commandPaciente.getRaza());
-        repositorioPacienteJpa.save(pacienteEntity);
+        repositorioPaciente.save(pacienteEntity);
         return PACINETE_REGISTRADO_EXITOSAMENTE;
     }
 

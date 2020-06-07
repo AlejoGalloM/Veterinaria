@@ -17,4 +17,9 @@ public class RepositorioPacientelmpl implements RepositorioPaciente {
 
     @Override
     public List<PacienteEntity> listar() { return  repositorioPacienteJpa.findAll(); }
+
+    @Override
+    public void save(PacienteEntity pacienteEntity) {
+        repositorioPacienteJpa.save(pacienteEntity);
+    }
 }
