@@ -5,6 +5,8 @@ import com.veterinaria.veterinaria.dominio.servicio.impl.ServicioCrearPaciente;
 import com.veterinaria.veterinaria.dominio.servicio.impl.ServicioListarPaciente;
 import com.veterinaria.veterinaria.entidad.PacienteEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +25,7 @@ public class PacienteController {
     public List<CommandPaciente> listar() {
         return servicioListarPaciente.findAll();
     }
+
 
     @PostMapping("/registrar")
     public String registroPaciente(@RequestBody CommandPaciente commandPaciente){

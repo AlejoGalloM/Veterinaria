@@ -7,4 +7,7 @@ import java.util.List;
 public interface RepositorioPaciente {
 
     List<PacienteEntity> listar();
+
+
+
 }

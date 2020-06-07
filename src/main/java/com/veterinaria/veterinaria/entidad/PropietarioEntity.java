@@ -1,6 +1,7 @@
 package com.veterinaria.veterinaria.entidad;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Data
 @Table(name = "Propietario")
 public class PropietarioEntity {
 

@@ -52,10 +52,10 @@ public class ServicioCrearPaciente {
     private void validarPacienteCreado(CommandPaciente commandPaciente) {
 
         List<CommandPaciente> listapacientes = servicioListarPaciente.findAll();
-        for (CommandPaciente paciente:listapacientes) {
-            if(commandPaciente.equals(paciente)) {
-                throw  new ExcepcionPacienteRegistrado(PACIENTE_REGISTRADO);
-            }
+            for (CommandPaciente paciente:listapacientes) {
+                if(commandPaciente.equals(paciente)) {
+                    throw  new ExcepcionPacienteRegistrado(PACIENTE_REGISTRADO);
+                }
         }
 
     }
