@@ -1,7 +1,7 @@
 package com.veterinaria.veterinaria.dominio.modelo;
 
-import com.veterinaria.veterinaria.entidad.PacienteEntity;
-import com.veterinaria.veterinaria.entidad.PropietarioEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import lombok.Setter;
 
 @Setter

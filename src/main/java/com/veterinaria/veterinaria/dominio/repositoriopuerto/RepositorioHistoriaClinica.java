@@ -1,8 +1,7 @@
 package com.veterinaria.veterinaria.dominio.repositoriopuerto;
 
-import com.veterinaria.veterinaria.entidad.HistoriaClinicaEntity;
-import com.veterinaria.veterinaria.repositoriojpa.RepositorioHistoriaClinicaJpa;
-import org.springframework.stereotype.Repository;
+import com.veterinaria.veterinaria.infraestructura.entidad.HistoriaClinicaEntity;
+import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioHistoriaClinicaJpa;
 
 import java.util.List;
 

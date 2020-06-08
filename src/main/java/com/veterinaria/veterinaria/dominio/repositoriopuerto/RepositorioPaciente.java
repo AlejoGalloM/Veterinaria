@@ -1,6 +1,6 @@
 package com.veterinaria.veterinaria.dominio.repositoriopuerto;
 
-import com.veterinaria.veterinaria.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
 
 import java.util.List;
 

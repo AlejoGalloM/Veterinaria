@@ -2,9 +2,8 @@ package com.veterinaria.veterinaria.dominio.modelo;
 
 
 import com.veterinaria.veterinaria.dominio.util.ValidadorArgumento;
-import com.veterinaria.veterinaria.entidad.PacienteEntity;
-import com.veterinaria.veterinaria.entidad.PropietarioEntity;
-import lombok.AllArgsConstructor;
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import lombok.Getter;
 
 
