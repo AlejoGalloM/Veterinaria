@@ -1,4 +1,4 @@
-package com.veterinaria.veterinaria.command;
+package com.veterinaria.veterinaria.aplicacion.command;
 
 import com.veterinaria.veterinaria.dominio.modelo.Paciente;
 import lombok.AllArgsConstructor;

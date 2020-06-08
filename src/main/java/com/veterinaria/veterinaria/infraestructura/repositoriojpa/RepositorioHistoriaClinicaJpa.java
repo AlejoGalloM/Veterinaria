@@ -1,10 +1,8 @@
-package com.veterinaria.veterinaria.repositoriojpa;
+package com.veterinaria.veterinaria.infraestructura.repositoriojpa;
 
-import com.veterinaria.veterinaria.entidad.HistoriaClinicaEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.HistoriaClinicaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.io.Serializable;
 
 @Repository
 public interface RepositorioHistoriaClinicaJpa extends JpaRepository<HistoriaClinicaEntity, Serializable> {

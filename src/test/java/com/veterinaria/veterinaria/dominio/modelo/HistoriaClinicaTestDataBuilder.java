@@ -1,5 +1,10 @@
 package com.veterinaria.veterinaria.dominio.modelo;
 
+<<<<<<< Updated upstream
+=======
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
+>>>>>>> Stashed changes
 import lombok.Setter;
 
 import java.io.Serializable;

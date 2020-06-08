@@ -1,6 +1,6 @@
-package com.veterinaria.veterinaria.repositoriojpa;
+package com.veterinaria.veterinaria.infraestructura.repositoriojpa;
 
-import com.veterinaria.veterinaria.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

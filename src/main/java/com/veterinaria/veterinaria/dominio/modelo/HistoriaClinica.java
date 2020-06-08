@@ -2,7 +2,12 @@ package com.veterinaria.veterinaria.dominio.modelo;
 
 
 import com.veterinaria.veterinaria.dominio.util.ValidadorArgumento;
+<<<<<<< Updated upstream
 import lombok.AllArgsConstructor;
+=======
+import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
+>>>>>>> Stashed changes
 import lombok.Getter;
 
 

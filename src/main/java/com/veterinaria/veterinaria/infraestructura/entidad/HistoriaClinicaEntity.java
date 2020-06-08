@@ -1,9 +1,7 @@
-package com.veterinaria.veterinaria.entidad;
+package com.veterinaria.veterinaria.infraestructura.entidad;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.awt.List;
 
 import javax.persistence.*;
 
