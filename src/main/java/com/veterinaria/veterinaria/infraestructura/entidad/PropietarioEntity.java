@@ -17,7 +17,6 @@ import javax.persistence.*;
 public class PropietarioEntity {
 
     @Id
-    @GeneratedValue
     private Integer id;
 
     @Column(name = "NombrePro", nullable = false)
