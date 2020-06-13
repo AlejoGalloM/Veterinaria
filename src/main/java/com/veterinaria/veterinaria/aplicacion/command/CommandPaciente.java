@@ -15,7 +15,7 @@ public class CommandPaciente {
     private String especie;
     private String raza;
     private int peso;
-    private PropietarioEntity propietario;
+    private Integer propietario;
     private Integer codigoPaciente;
 
 }

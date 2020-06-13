@@ -31,7 +31,6 @@ public class PacienteEntity {
     @Column(name = "pesoPte", nullable = false)
     private int peso;
 
-    @ManyToOne
     @JoinColumn
-    private PropietarioEntity codigoPropietario;
+    private Integer codigoPropietario;
 }

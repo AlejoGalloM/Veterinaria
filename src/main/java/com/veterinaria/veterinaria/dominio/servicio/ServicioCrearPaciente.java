@@ -46,7 +46,7 @@ public class ServicioCrearPaciente {
         validarPropietarioNoRegistrado(commandPaciente.getPropietario());
         PacienteEntity pacienteEntity = new PacienteEntity();
         pacienteEntity.setCodigoPaciente(commandPaciente.getCodigoPaciente());
-        pacienteEntity.setCodigoPropietario(factoryPropietario.commandToEntity(propietario));
+        pacienteEntity.setCodigoPropietario(commandPaciente.getPropietario());
         pacienteEntity.setEspecie(commandPaciente.getEspecie());
         pacienteEntity.setNombre(commandPaciente.getNombre());
         pacienteEntity.setPeso(commandPaciente.getPeso());
@@ -72,13 +72,12 @@ public class ServicioCrearPaciente {
 
     }
 
-    private void validarPropietarioNoRegistrado(PropietarioEntity codigoPropietario) {
+    private void validarPropietarioNoRegistrado(Integer codigoPropietario) {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
         for (CommandPropietario propietario: listaPropietarios) {
-            if(propietario.getId()==codigoPropietario.getId()){
+            if(propietario.getId()==codigoPropietario){
                 encontrado=true;
-                agregarPropietario(propietario);
                 break;
             }
         }
@@ -87,7 +86,5 @@ public class ServicioCrearPaciente {
         }
     }
 
-    private void agregarPropietario(CommandPropietario propietario) {
-        this.propietario=propietario;
-    }
+
 }
