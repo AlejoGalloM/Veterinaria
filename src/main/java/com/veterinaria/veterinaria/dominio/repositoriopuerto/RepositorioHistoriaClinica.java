@@ -9,4 +9,5 @@ import java.util.List;
 public interface RepositorioHistoriaClinica extends RepositorioHistoriaClinicaJpa {
 
     List<HistoriaClinicaEntity> listar();
+
 }

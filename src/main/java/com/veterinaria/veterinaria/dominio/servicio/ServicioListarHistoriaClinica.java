@@ -22,8 +22,4 @@ public class ServicioListarHistoriaClinica {
 
     }
 
-
-    public String registrarHistoriaClinica(CommandHistoriaClinica commandHistoriaClinica) {
-        return "";
-    }
 }

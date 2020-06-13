@@ -29,4 +29,14 @@ public class FactoryPaciente {
         commandPaciente.setRaza(pacienteEntity.getRaza());
         return commandPaciente;
     }
+    public PacienteEntity commandToEntity(CommandPaciente commandPaciente){
+        PacienteEntity pacienteEntity = new PacienteEntity();
+        pacienteEntity.setCodigoPaciente(commandPaciente.getCodigoPaciente());
+        pacienteEntity.setEspecie(commandPaciente.getEspecie());
+        pacienteEntity.setNombre(commandPaciente.getNombre());
+        pacienteEntity.setPeso(commandPaciente.getPeso());
+        pacienteEntity.setCodigoPropietario(commandPaciente.getPropietario());
+        pacienteEntity.setRaza(commandPaciente.getRaza());
+        return pacienteEntity;
+    }
 }
