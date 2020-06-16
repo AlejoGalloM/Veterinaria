@@ -1,5 +1,6 @@
 package com.veterinaria.veterinaria.infraestructura.entidad;
 
+import javafx.beans.binding.IntegerBinding;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,12 +26,10 @@ public class HistoriaClinicaEntity {
     @Column(name = "medicamentos", nullable = false)
     private String medicamentos;
 
-    @ManyToOne
     @JoinColumn
-    private PacienteEntity codigoPaciente;
+    private Integer codigoPaciente;
 
-    @ManyToOne
     @JoinColumn
-    private PropietarioEntity codigoPropietario;
+    private Integer codigoPropietario;
 
 }

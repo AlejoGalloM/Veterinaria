@@ -51,8 +51,8 @@ public class ServicioCrearHistoriaClinica {
         validarPacinteNoRegistrado(commandHistoriaClinica.getCodigoPaciente());
         HistoriaClinicaEntity historiaClinicaEntity = new HistoriaClinicaEntity();
         historiaClinicaEntity.setCodigoHistoria(commandHistoriaClinica.getCodigoHistoria());
-        historiaClinicaEntity.setCodigoPropietario(factoryPropietario.commandToEntity(propietario));
-        historiaClinicaEntity.setCodigoPaciente(factoryPaciente.commandToEntity(paciente));
+        historiaClinicaEntity.setCodigoPropietario(commandHistoriaClinica.getCodigoPropietario());
+        historiaClinicaEntity.setCodigoPaciente(commandHistoriaClinica.getCodigoPaciente());
         historiaClinicaEntity.setMedicamentos(commandHistoriaClinica.getMedicamentos());
         historiaClinicaEntity.setProcedimientos(commandHistoriaClinica.getProcedimientos());
         repositorioHistoriaClinica.save(historiaClinicaEntity);
@@ -60,11 +60,11 @@ public class ServicioCrearHistoriaClinica {
 
     }
 
-    private void validarPacinteNoRegistrado(PacienteEntity codigoPaciente) {
+    private void validarPacinteNoRegistrado(Integer codigoPaciente) {
         List<CommandPaciente> listaPacientes = servicioListarPaciente.findAll();
         boolean registrado = false;
         for (CommandPaciente paciente: listaPacientes) {
-            if(paciente.getCodigoPaciente().equals(codigoPaciente.getCodigoPaciente())){
+            if(paciente.getCodigoPaciente().equals(codigoPaciente)){
                 registrado = true;
                 agregarPaciente(paciente);
                 break;
@@ -80,13 +80,13 @@ public class ServicioCrearHistoriaClinica {
         this.paciente = paciente;
     }
 
-    private void validarPropietarioNoRegistrado(PropietarioEntity codigoPropietario) {
+    private void validarPropietarioNoRegistrado(Integer codigoPropietario) {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
         for (CommandPropietario propietario: listaPropietarios) {
-            if(propietario.getId()==codigoPropietario.getId()){
+            if(propietario.getId()==codigoPropietario){
                 encontrado=true;
-                agregarPropietario(propietario);
+                this.propietario=propietario;
                 break;
             }
         }
@@ -95,14 +95,8 @@ public class ServicioCrearHistoriaClinica {
         }
     }
 
-
-
-    private void agregarPropietario(CommandPropietario commandPropietario){
-        this.propietario=commandPropietario;
-    }
-
-    private void validarPropietarioNoNulo(PropietarioEntity codigoPropietario) {
-        if(codigoPropietario.getId().equals(null)){
+    private void validarPropietarioNoNulo(Integer codigoPropietario) {
+        if(codigoPropietario==null){
             throw new ExcepcionNombrePropietarioObligatorio(IDENTIFICACION_PACIENTE_OBLIGATORIA);
         }
     }

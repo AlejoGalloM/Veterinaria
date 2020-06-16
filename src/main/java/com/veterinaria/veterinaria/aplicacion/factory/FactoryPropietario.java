@@ -35,15 +35,4 @@ public class FactoryPropietario {
                 commandPropietario.getId(), commandPropietario.getTelefono(),
                 commandPropietario.getDireccion(), commandPropietario.getEmail());
     }
-
-    public PropietarioEntity commandToEntity(CommandPropietario commandPropietario){
-        PropietarioEntity propietarioEntity = new PropietarioEntity();
-        propietarioEntity.setId(commandPropietario.getId());
-        propietarioEntity.setNombre(commandPropietario.getNombre());
-        propietarioEntity.setApellido(commandPropietario.getApellido());
-        propietarioEntity.setDireccion(commandPropietario.getDireccion());
-        propietarioEntity.setEmail(commandPropietario.getEmail());
-        propietarioEntity.setTelefono(commandPropietario.getTelefono());
-        return propietarioEntity;
-    }
 }

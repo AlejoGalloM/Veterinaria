@@ -16,8 +16,8 @@ public class CommandHistoriaClinica {
     private Integer codigoHistoria;
     private String procedimientos;
     private String medicamentos;
-    private PacienteEntity codigoPaciente;
-    private PropietarioEntity codigoPropietario;
+    private Integer codigoPaciente;
+    private Integer codigoPropietario;
 
 
 }
