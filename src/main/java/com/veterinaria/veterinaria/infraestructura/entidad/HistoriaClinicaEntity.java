@@ -1,6 +1,5 @@
 package com.veterinaria.veterinaria.infraestructura.entidad;
 
-import javafx.beans.binding.IntegerBinding;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
