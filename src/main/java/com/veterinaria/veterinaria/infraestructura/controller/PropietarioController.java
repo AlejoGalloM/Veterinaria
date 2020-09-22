@@ -4,7 +4,6 @@ import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.aplicacion.manejador.ManejadorRegistrarPropietario;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioCrearPropietario;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioListarPropietario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

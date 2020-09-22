@@ -9,7 +9,6 @@ import com.veterinaria.veterinaria.dominio.excepcion.ExcepcionPropietarioNoRegis
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPaciente;
 import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
 import com.veterinaria.veterinaria.aplicacion.factory.FactoryPaciente;
-import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

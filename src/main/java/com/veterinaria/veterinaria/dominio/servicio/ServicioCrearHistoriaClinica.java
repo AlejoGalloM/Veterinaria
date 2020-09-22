@@ -11,8 +11,6 @@ import com.veterinaria.veterinaria.dominio.excepcion.ExcepcionPacienteNoRegistra
 import com.veterinaria.veterinaria.dominio.excepcion.ExcepcionPropietarioNoRegistrado;
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioHistoriaClinica;
 import com.veterinaria.veterinaria.infraestructura.entidad.HistoriaClinicaEntity;
-import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
-import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -63,7 +61,7 @@ public class ServicioCrearHistoriaClinica {
     private void validarPacinteNoRegistrado(Integer codigoPaciente) {
         List<CommandPaciente> listaPacientes = servicioListarPaciente.findAll();
         boolean registrado = false;
-        for (CommandPaciente paciente: listaPacientes) {
+        for (CommandPaciente paciente : listaPacientes) {
             if(paciente.getCodigoPaciente().equals(codigoPaciente)){
                 registrado = true;
                 agregarPaciente(paciente);
@@ -71,7 +69,8 @@ public class ServicioCrearHistoriaClinica {
             }
 
         }
-        if(registrado==false){
+        if(registrado == false){
+
             throw new ExcepcionPacienteNoRegistrado(PACIENTE_NO_REGISTRADO);
         }
     }
@@ -90,7 +89,7 @@ public class ServicioCrearHistoriaClinica {
                 break;
             }
         }
-        if(encontrado==false){
+        if(encontrado == false){
             throw new ExcepcionPropietarioNoRegistrado(PROPIETARIO_NO_REGISTRADO);
         }
     }

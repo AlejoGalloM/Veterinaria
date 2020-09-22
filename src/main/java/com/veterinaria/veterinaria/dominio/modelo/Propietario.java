@@ -3,9 +3,8 @@ package com.veterinaria.veterinaria.dominio.modelo;
 import com.veterinaria.veterinaria.dominio.util.ValidadorArgumento;
 import lombok.Getter;
 
-@Getter 
+@Getter
 public class Propietario {
-
     
 	public static final String TELEFONO_PROPIETARIO_OBLIGATORIO = "EL TELEFONO DEL PROPIETARIO NO ´PUEDE ESTAR VACIO";
     public static final String NOMBRE_PRIPIETARIO_OBLIGATORIO = "EL NOMBRE DEL PROPIETARIO NO PUEDE ESTAR VACIO";
@@ -16,8 +15,6 @@ public class Propietario {
     private String telefono;
     private String direccion;
     private String Email;
-    //Preferible utilizar Integer o Long en ves de Serialiazable
-
 
 	public Propietario(String nombre, String apellido, Integer id, String telefono, String direccion, String email) {
 
