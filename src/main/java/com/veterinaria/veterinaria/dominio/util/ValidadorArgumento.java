@@ -17,8 +17,8 @@ public class ValidadorArgumento {
     }
     //preferible utilizar este metodo con el Object, este no importa si es un String o un Integer
     public static void validadorArgumento(Object valor, String mensaje){
-        if(valor==null){
-
+        if( valor == null ){
+            throw new ExcepcionPesoPacienteObligatorio(mensaje);
         }
     }
 

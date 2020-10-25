@@ -69,7 +69,7 @@ public class ServicioCrearHistoriaClinica {
             }
 
         }
-        if(registrado == false){
+        if(!registrado){
 
             throw new ExcepcionPacienteNoRegistrado(PACIENTE_NO_REGISTRADO);
         }
@@ -83,13 +83,13 @@ public class ServicioCrearHistoriaClinica {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
         for (CommandPropietario propietario: listaPropietarios) {
-            if(propietario.getId()==codigoPropietario){
+            if(codigoPropietario.equals(propietario.getId())){
                 encontrado=true;
                 this.propietario=propietario;
                 break;
             }
         }
-        if(encontrado == false){
+        if(!encontrado){
             throw new ExcepcionPropietarioNoRegistrado(PROPIETARIO_NO_REGISTRADO);
         }
     }

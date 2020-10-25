@@ -14,7 +14,6 @@ public class RepositorioHistoriaClinicaImpl {
     @Autowired
     public RepositorioHistoriaClinicaJpa repositorioHistoriaClinicaJpa;
 
-
     public List<HistoriaClinicaEntity> listar() {
         return repositorioHistoriaClinicaJpa.findAll();
     }

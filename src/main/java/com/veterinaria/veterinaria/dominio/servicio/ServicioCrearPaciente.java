@@ -75,12 +75,12 @@ public class ServicioCrearPaciente {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
         for (CommandPropietario propietario: listaPropietarios) {
-            if(propietario.getId()==codigoPropietario){
+            if(codigoPropietario.equals(propietario.getId())){
                 encontrado=true;
                 break;
             }
         }
-        if(encontrado==false){
+        if(!encontrado){
             throw new ExcepcionPropietarioNoRegistrado(PROPIETARIO_NO_REGISTRADO);
         }
     }
