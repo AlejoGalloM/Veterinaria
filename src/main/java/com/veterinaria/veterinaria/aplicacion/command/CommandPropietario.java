@@ -1,13 +1,10 @@
 package com.veterinaria.veterinaria.aplicacion.command;
 
-import com.veterinaria.veterinaria.dominio.modelo.Paciente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
-
-import javax.validation.constraints.Email;
 
 @Component
 @Getter @NoArgsConstructor @AllArgsConstructor @Setter

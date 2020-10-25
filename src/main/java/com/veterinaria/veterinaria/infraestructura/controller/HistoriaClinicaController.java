@@ -27,4 +27,6 @@ public class HistoriaClinicaController {
     public String regitrarHistoriaClinica(@RequestBody  CommandHistoriaClinica commandHistoriaClinica){
         return servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
+
+
 }

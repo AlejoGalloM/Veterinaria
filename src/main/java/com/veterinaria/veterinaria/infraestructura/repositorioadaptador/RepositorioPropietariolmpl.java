@@ -1,5 +1,6 @@
 package com.veterinaria.veterinaria.infraestructura.repositorioadaptador;
 
+import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.dominio.modelo.Propietario;
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPropietario;
 import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
@@ -25,6 +26,18 @@ public class RepositorioPropietariolmpl implements RepositorioPropietario {
 
     @Override
     public void guardar(Propietario propietario) {
+        PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
+        repositorioPropietarioJpa.save(propietarioEntity);
+    }
+
+    @Override
+    public void eliminar(CommandPropietario propietario) {
+        PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
+        repositorioPropietarioJpa.delete(propietarioEntity);
+    }
+
+    @Override
+    public void actualizar(CommandPropietario propietario) {
         PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
         repositorioPropietarioJpa.save(propietarioEntity);
     }
