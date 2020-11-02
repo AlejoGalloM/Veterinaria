@@ -10,7 +10,7 @@ public class ServicioEliminarPaciente {
     private RepositorioPaciente repositorioPaciente;
 
     private void ejecutar(CommandPropietario commandPropietario){
-        repositorioPaciente.
+
     }
 
 }
