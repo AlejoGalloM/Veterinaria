@@ -1,13 +1,20 @@
 package com.veterinaria.veterinaria.infraestructura.repositorioadaptador;
 
+import com.veterinaria.veterinaria.aplicacion.command.CommandPaciente;
+import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPaciente;
 import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
+import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPacienteJpa;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import org.modelmapper.ModelMapper;
+
 
 @Repository
 public class RepositorioPacientelmpl implements RepositorioPaciente {
+
+    private final ModelMapper modelMapper = new ModelMapper();
 
     public RepositorioPacienteJpa repositorioPacienteJpa;
 
@@ -20,6 +27,18 @@ public class RepositorioPacientelmpl implements RepositorioPaciente {
 
     @Override
     public void save(PacienteEntity pacienteEntity) {
+        repositorioPacienteJpa.save(pacienteEntity);
+    }
+
+    @Override
+    public void eliminar(CommandPaciente paciente) {
+        PacienteEntity pacienteEntity = modelMapper.map(paciente ,PacienteEntity.class);
+        repositorioPacienteJpa.delete(pacienteEntity);
+    }
+
+    @Override
+    public void actualizar(CommandPaciente paciente) {
+        PacienteEntity pacienteEntity = modelMapper.map(paciente ,PacienteEntity.class);
         repositorioPacienteJpa.save(pacienteEntity);
     }
 }
