@@ -2,9 +2,7 @@ package com.veterinaria.veterinaria.infraestructura.controller;
 
 import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.aplicacion.manejador.ManejadorRegistrarPropietario;
-import com.veterinaria.veterinaria.dominio.servicio.ServicioCrearPropietario;
-import com.veterinaria.veterinaria.dominio.servicio.ServicioEliminarPropietario;
-import com.veterinaria.veterinaria.dominio.servicio.ServicioListarPropietario;
+import com.veterinaria.veterinaria.dominio.servicio.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -19,15 +17,20 @@ public class PropietarioController {
     private final ServicioListarPropietario servicioListarPropietario;
     private final ServicioCrearPropietario servicioCrearPropietario;
     private final ServicioEliminarPropietario servicioEliminarPropietario;
+    private final ServicioActualizarPropietario servicioActualizarPropietario;
+    private final ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre;
+
 
     public PropietarioController(ManejadorRegistrarPropietario manejadorRegistrarPropietario,
                                  ServicioListarPropietario servicioListarPropietario,
                                  ServicioCrearPropietario servicioCrearPropietario,
-                                 ServicioEliminarPropietario servicioEliminarPropietario) {
+                                 ServicioEliminarPropietario servicioEliminarPropietario, ServicioActualizarPropietario servicioActualizarPropietario, ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre) {
         this.manejadorRegistrarPropietario = manejadorRegistrarPropietario;
         this.servicioListarPropietario = servicioListarPropietario;
         this.servicioCrearPropietario = servicioCrearPropietario;
         this.servicioEliminarPropietario = servicioEliminarPropietario;
+        this.servicioActualizarPropietario = servicioActualizarPropietario;
+        this.servicioListarPropietarioPorNombre = servicioListarPropietarioPorNombre;
     }
 
     @GetMapping()
@@ -38,6 +41,9 @@ public class PropietarioController {
     public void registroPropietario(@RequestBody CommandPropietario commandPropietario){
         this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
     }
+
+    @GetMapping("/buscar/{nombre}")
+    public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) { return this.servicioListarPropietarioPorNombre.ejecutar(nombre);}
 
     @DeleteMapping("/{id}/eliminar" )
     public void eliminarPropietario(@PathVariable Integer id){
@@ -60,6 +66,6 @@ public class PropietarioController {
                 propietario = propietarioID;
             }
         }
-        servicioEliminarPropietario.ejecutar(propietario);
+        servicioActualizarPropietario.ejecutar(propietario);
     }
 }

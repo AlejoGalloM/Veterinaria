@@ -17,8 +17,7 @@ import java.util.List;
 public class RepositorioHistoriaClinicaImpl {
 
     private final ModelMapper modelMapper = new ModelMapper();
-    @Autowired
-    public RepositorioHistoriaClinica repositorioHistoriaClinica;
+
     @Autowired
     public RepositorioHistoriaClinicaJpa repositorioHistoriaClinicaJpa;
 
@@ -28,12 +27,12 @@ public class RepositorioHistoriaClinicaImpl {
 
     public void eliminar(CommandHistoriaClinica historiaClinica) {
         HistoriaClinicaEntity historiaClinicaEntity = modelMapper.map(historiaClinica , HistoriaClinicaEntity.class);
-        repositorioHistoriaClinica.delete(historiaClinicaEntity);
+        repositorioHistoriaClinicaJpa.delete(historiaClinicaEntity);
     }
 
 
     public void actualizar(CommandHistoriaClinica historiaClinica) {
         HistoriaClinicaEntity historiaClinicaEntity = modelMapper.map(historiaClinica , HistoriaClinicaEntity.class);
-        repositorioHistoriaClinica.save(historiaClinicaEntity);
+        repositorioHistoriaClinicaJpa.save(historiaClinicaEntity);
     }
 }
