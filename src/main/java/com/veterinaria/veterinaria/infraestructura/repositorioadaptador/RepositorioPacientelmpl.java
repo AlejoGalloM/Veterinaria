@@ -1,6 +1,5 @@
 package com.veterinaria.veterinaria.infraestructura.repositorioadaptador;
 
-import com.veterinaria.veterinaria.aplicacion.command.CommandPaciente;
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPaciente;
 import com.veterinaria.veterinaria.infraestructura.entidad.PacienteEntity;
 import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPacienteJpa;
@@ -15,7 +14,6 @@ import org.modelmapper.ModelMapper;
 public class RepositorioPacientelmpl implements RepositorioPaciente {
 
     private final ModelMapper modelMapper = new ModelMapper();
-
     public RepositorioPacienteJpa repositorioPacienteJpa;
 
     public RepositorioPacientelmpl(RepositorioPacienteJpa repositorioPacienteJpa) {

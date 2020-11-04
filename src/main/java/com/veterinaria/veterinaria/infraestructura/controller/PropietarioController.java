@@ -18,8 +18,6 @@ public class PropietarioController {
     private final ManejadorRegistrarPropietario manejadorRegistrarPropietario;
     private final ManejadorActualizarPropietario manejadorActualizarPropietario;
     private final ServicioListarPropietario servicioListarPropietario;
-    private final ServicioCrearPropietario servicioCrearPropietario;
-    private final ServicioActualizarPropietario servicioActualizarPropietario;
     private final ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre;
     private final RepositorioPropietarioJpa repositorioPropietarioJpa;
     private final ServicioBuscarPropietarioPorId servicioBuscarPropietarioPorId;
@@ -27,15 +25,12 @@ public class PropietarioController {
     public PropietarioController(ManejadorRegistrarPropietario manejadorRegistrarPropietario,
                                  ManejadorActualizarPropietario manejadorActualizarPropietario,
                                  ServicioListarPropietario servicioListarPropietario,
-                                 ServicioCrearPropietario servicioCrearPropietario,
-                                 ServicioActualizarPropietario servicioActualizarPropietario,
                                  ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre,
-                                 RepositorioPropietarioJpa repositorioPropietarioJpa, ServicioBuscarPropietarioPorId servicioBuscarPropietarioPorId) {
+                                 RepositorioPropietarioJpa repositorioPropietarioJpa,
+                                 ServicioBuscarPropietarioPorId servicioBuscarPropietarioPorId) {
         this.manejadorRegistrarPropietario = manejadorRegistrarPropietario;
         this.manejadorActualizarPropietario = manejadorActualizarPropietario;
         this.servicioListarPropietario = servicioListarPropietario;
-        this.servicioCrearPropietario = servicioCrearPropietario;
-        this.servicioActualizarPropietario = servicioActualizarPropietario;
         this.servicioListarPropietarioPorNombre = servicioListarPropietarioPorNombre;
         this.repositorioPropietarioJpa = repositorioPropietarioJpa;
         this.servicioBuscarPropietarioPorId = servicioBuscarPropietarioPorId;
@@ -52,13 +47,13 @@ public class PropietarioController {
         this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
     }
 
-    @GetMapping("/buscar/nombre/{nombre}")
+    @GetMapping(value = "/buscar/nombre/{nombre}")
     public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) {
         return this.servicioListarPropietarioPorNombre.ejecutar(nombre);
     }
 
-    @GetMapping("/buscar/id/{id}")
-    public CommandPropietario listarPorId(@PathVariable Integer id){
+    @GetMapping(value = "/buscar/id/{id}")
+    public CommandPropietario listarPorId(@PathVariable Integer id) {
         return this.servicioBuscarPropietarioPorId.ejecutar(id);
     }
 

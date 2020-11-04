@@ -6,6 +6,7 @@ import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPropietarioJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -17,7 +18,7 @@ public class ServicioListarPropietarioPorNombre {
     private FactoryPropietario factoryPropietario;
 
 
-    public List<CommandPropietario> ejecutar(String nombre){
+    public List<CommandPropietario> ejecutar(String nombre) {
         List<PropietarioEntity> propietariosConNombre = repositorioPropietarioJpa.buscaPorNombre(nombre);
         return factoryPropietario.entityToCommand(propietariosConNombre);
 

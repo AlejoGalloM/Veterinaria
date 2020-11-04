@@ -17,7 +17,7 @@ public class ServicioListarPacientePorPropietario {
     @Autowired
     FactoryPaciente factoryPaciente;
 
-    public List<CommandPaciente> ejecutar(Integer idPropietario){
+    public List<CommandPaciente> ejecutar(Integer idPropietario) {
         return factoryPaciente.entityToCommand(repositorioPacienteJpa.buscarPorIdPropietario(idPropietario));
     }
 }

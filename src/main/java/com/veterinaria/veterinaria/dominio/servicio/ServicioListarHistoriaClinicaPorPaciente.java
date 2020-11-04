@@ -12,12 +12,12 @@ import java.util.List;
 public class ServicioListarHistoriaClinicaPorPaciente {
 
     @Autowired
-    RepositorioHistoriaClinicaJpa  repositorioHistoriaClinicaJpa;
+    RepositorioHistoriaClinicaJpa repositorioHistoriaClinicaJpa;
 
     @Autowired
     FactoryHistorioClinica factoryHistorioClinica;
 
-    public List<CommandHistoriaClinica> ejecutar(Integer idPaciente){
+    public List<CommandHistoriaClinica> ejecutar(Integer idPaciente) {
         return factoryHistorioClinica.entityToCommand(repositorioHistoriaClinicaJpa.buscarPorPaciente(idPaciente));
     }
 }

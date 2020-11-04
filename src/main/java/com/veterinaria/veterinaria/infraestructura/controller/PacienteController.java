@@ -55,17 +55,17 @@ public class PacienteController {
     }
 
     @GetMapping(value = "/buscar/propietario/{idPropietario}")
-    public List<CommandPaciente> listarPacientesPorPropietario(@PathVariable Integer idPropietario){
+    public List<CommandPaciente> listarPacientesPorPropietario(@PathVariable Integer idPropietario) {
         return servicioListarPacientePorPropietario.ejecutar(idPropietario);
     }
 
     @GetMapping(value = "/buscar/especie/{especie}")
-    public List<CommandPaciente> listarPacientesPorEspecie(@PathVariable String especie){
+    public List<CommandPaciente> listarPacientesPorEspecie(@PathVariable String especie) {
         return servicioListarPacientePorEspecie.ejecutar(especie);
     }
 
     @GetMapping(value = "/buscar/raza/{raza}")
-    public List<CommandPaciente> listarPacientesPorRaza(@PathVariable String raza){
+    public List<CommandPaciente> listarPacientesPorRaza(@PathVariable String raza) {
         return servicioListarPacientePorRaza.ejecutar(raza);
     }
 

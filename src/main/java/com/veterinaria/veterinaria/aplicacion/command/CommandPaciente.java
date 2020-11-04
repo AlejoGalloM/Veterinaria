@@ -1,6 +1,5 @@
 package com.veterinaria.veterinaria.aplicacion.command;
 
-import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

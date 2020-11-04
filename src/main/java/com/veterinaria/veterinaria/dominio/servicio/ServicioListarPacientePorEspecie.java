@@ -17,7 +17,7 @@ public class ServicioListarPacientePorEspecie {
     @Autowired
     FactoryPaciente factoryPaciente;
 
-    public List<CommandPaciente> ejecutar(String especie){
+    public List<CommandPaciente> ejecutar(String especie) {
         return factoryPaciente.entityToCommand(repositorioPacienteJpa.buscarPorEspecie(especie));
     }
 }

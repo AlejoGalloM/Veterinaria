@@ -15,10 +15,10 @@ public class Paciente {
     private String especie;
     private String raza;
     private int peso;
-    private Propietario propietario;
+    private Integer propietario;
     private Integer codigoPaciente;
 
-    public Paciente(String nombre, String especie, String raza, int peso, Propietario propietario,
+    public Paciente(String nombre, String especie, String raza, int peso, Integer propietario,
                     Integer codigoPaciente) {
 
         ValidadorArgumento.validarEspecieNula(especie, ESPECIE_PACIENTE_REQUERIDA);

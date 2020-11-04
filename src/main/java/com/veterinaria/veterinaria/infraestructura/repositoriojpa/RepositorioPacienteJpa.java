@@ -18,6 +18,6 @@ public interface RepositorioPacienteJpa extends JpaRepository<PacienteEntity, Se
     @Query("SELECT u FROM  PacienteEntity u WHERE u.especie LIKE :especie%")
     List<PacienteEntity> buscarPorEspecie(@Param("especie") String especie);
 
-    @Query("SELECT u FROM  PacienteEntity u WHERE u.especie LIKE :raza%")
+    @Query("SELECT u FROM  PacienteEntity u WHERE u.raza LIKE :raza%")
     List<PacienteEntity> buscarPorRaza(@Param("raza") String raza);
 }

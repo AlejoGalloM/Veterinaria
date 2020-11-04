@@ -17,7 +17,7 @@ public class ServicioListarPacientePorRaza {
     @Autowired
     FactoryPaciente factoryPaciente;
 
-    public List<CommandPaciente> ejecutar(String raza){
-        return  factoryPaciente.entityToCommand(repositorioPacienteJpa.buscarPorRaza(raza));
+    public List<CommandPaciente> ejecutar(String raza) {
+        return factoryPaciente.entityToCommand(repositorioPacienteJpa.buscarPorRaza(raza));
     }
 }

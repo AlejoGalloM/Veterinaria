@@ -31,7 +31,6 @@ public class HistoriaClinicaController {
     public RepositorioHistoriaClinicaJpa repositorioHistoriaClinicaJpa;
 
 
-
     @GetMapping()
     public List<CommandHistoriaClinica> listar() {
         return servicioListarHistoriaClinica.findAll();
@@ -42,23 +41,23 @@ public class HistoriaClinicaController {
         return servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public void eliminarHistoriaClinica(@PathVariable Integer id) {
         repositorioHistoriaClinicaJpa.deleteById(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}")
     public void actualizarHistoriaClinica(@PathVariable Integer id, @RequestBody CommandHistoriaClinica commandHistoriaClinica) {
         servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 
-    @GetMapping("/buscar/fecha")
-    public List<CommandHistoriaClinica> listarHistoriaClinicaPorFecha(@PathVariable String fecha){
+    @GetMapping(value = "/buscar/{fecha}")
+    public List<CommandHistoriaClinica> listarHistoriaClinicaPorFecha(@PathVariable String fecha) {
         return servicioListarHistoriaClinicaPorFecha.ejecutar(fecha);
     }
 
-    @GetMapping("/buscar/paciente/idPaciente")
-    public List<CommandHistoriaClinica> listarHistoriaClinicaPorPaciente(@PathVariable Integer idPaciente){
+    @GetMapping(value = "/buscar/{idPaciente}")
+    public List<CommandHistoriaClinica> listarHistoriaClinicaPorPaciente(@PathVariable Integer idPaciente) {
         return servicioListarHistoriaClinicaPorPaciente.ejecutar(idPaciente);
     }
 

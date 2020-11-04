@@ -1,6 +1,5 @@
 package com.veterinaria.veterinaria.dominio.servicio;
 
-
 import com.veterinaria.veterinaria.dominio.excepcion.ExcepcionNombrePropietarioObligatorio;
 import com.veterinaria.veterinaria.dominio.modelo.Propietario;
 import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPropietario;

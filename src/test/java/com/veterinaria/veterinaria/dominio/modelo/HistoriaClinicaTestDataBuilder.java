@@ -9,8 +9,8 @@ public class HistoriaClinicaTestDataBuilder implements IHistoriaClinica  {
 
     private String procedimientos;
     private String medicamentos;
-    private PacienteEntity codigoPaciente;
-    private PropietarioEntity codigoPropietario;
+    private Integer codigoPaciente;
+    private Integer codigoPropietario;
     private Integer codigoHistoria;
 
 
