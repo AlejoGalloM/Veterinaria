@@ -1,8 +1,10 @@
 package com.veterinaria.veterinaria.infraestructura.controller;
 
 import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
+import com.veterinaria.veterinaria.aplicacion.manejador.ManejadorActualizarPropietario;
 import com.veterinaria.veterinaria.aplicacion.manejador.ManejadorRegistrarPropietario;
 import com.veterinaria.veterinaria.dominio.servicio.*;
+import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPropietarioJpa;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -14,23 +16,27 @@ import java.util.List;
 public class PropietarioController {
 
     private final ManejadorRegistrarPropietario manejadorRegistrarPropietario;
+    private final ManejadorActualizarPropietario manejadorActualizarPropietario;
     private final ServicioListarPropietario servicioListarPropietario;
     private final ServicioCrearPropietario servicioCrearPropietario;
-    private final ServicioEliminarPropietario servicioEliminarPropietario;
     private final ServicioActualizarPropietario servicioActualizarPropietario;
     private final ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre;
-
+    private final RepositorioPropietarioJpa repositorioPropietarioJpa;
 
     public PropietarioController(ManejadorRegistrarPropietario manejadorRegistrarPropietario,
+                                 ManejadorActualizarPropietario manejadorActualizarPropietario,
                                  ServicioListarPropietario servicioListarPropietario,
                                  ServicioCrearPropietario servicioCrearPropietario,
-                                 ServicioEliminarPropietario servicioEliminarPropietario, ServicioActualizarPropietario servicioActualizarPropietario, ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre) {
+                                 ServicioActualizarPropietario servicioActualizarPropietario,
+                                 ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre,
+                                 RepositorioPropietarioJpa repositorioPropietarioJpa) {
         this.manejadorRegistrarPropietario = manejadorRegistrarPropietario;
+        this.manejadorActualizarPropietario = manejadorActualizarPropietario;
         this.servicioListarPropietario = servicioListarPropietario;
         this.servicioCrearPropietario = servicioCrearPropietario;
-        this.servicioEliminarPropietario = servicioEliminarPropietario;
         this.servicioActualizarPropietario = servicioActualizarPropietario;
         this.servicioListarPropietarioPorNombre = servicioListarPropietarioPorNombre;
+        this.repositorioPropietarioJpa = repositorioPropietarioJpa;
     }
 
     @GetMapping()
@@ -45,27 +51,15 @@ public class PropietarioController {
     @GetMapping("/buscar/{nombre}")
     public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) { return this.servicioListarPropietarioPorNombre.ejecutar(nombre);}
 
-    @DeleteMapping("/{id}/eliminar" )
+    @DeleteMapping(value = "/{id}" )
     public void eliminarPropietario(@PathVariable Integer id){
-        CommandPropietario propietario = null;
-        for (CommandPropietario propietarioID: listar())
-        {
-          if (propietarioID.getId().equals(id)){
-              propietario = propietarioID;
-          }
-        }
-        servicioEliminarPropietario.ejecutar(propietario);
+        repositorioPropietarioJpa.deleteById(id);
     }
 
-    @PutMapping("/{id}/actualizar")
-    public void actualizarPropietario(@PathVariable Integer id){
-        CommandPropietario propietario = null;
-        for (CommandPropietario propietarioID: listar())
-        {
-            if (propietarioID.getId().equals(id)){
-                propietario = propietarioID;
-            }
-        }
-        servicioActualizarPropietario.ejecutar(propietario);
+    @PutMapping(value = "/{id}")
+    public void actualizarPropietario(@PathVariable Integer id, @RequestBody CommandPropietario propietario){
+
+        this.manejadorActualizarPropietario.ejecutar(propietario, id);
+
     }
 }

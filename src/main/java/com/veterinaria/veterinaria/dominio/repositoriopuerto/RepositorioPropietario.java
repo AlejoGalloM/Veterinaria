@@ -15,10 +15,6 @@ public interface RepositorioPropietario{
 
     void guardar(Propietario propietario);
 
-    void eliminar(CommandPropietario propietario);
-
-    void actualizar(CommandPropietario propietario);
-
     @Query("select PropietarioEntity from PropietarioEntity  where PropietarioEntity.nombre like :nombre")
     List<CommandPropietario> buscaPorNombre(@Param("nombre") String nombre);
 

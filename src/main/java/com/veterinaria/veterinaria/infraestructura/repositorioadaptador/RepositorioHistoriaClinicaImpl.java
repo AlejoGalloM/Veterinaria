@@ -25,14 +25,7 @@ public class RepositorioHistoriaClinicaImpl {
         return repositorioHistoriaClinicaJpa.findAll();
     }
 
-    public void eliminar(CommandHistoriaClinica historiaClinica) {
-        HistoriaClinicaEntity historiaClinicaEntity = modelMapper.map(historiaClinica , HistoriaClinicaEntity.class);
-        repositorioHistoriaClinicaJpa.delete(historiaClinicaEntity);
-    }
 
 
-    public void actualizar(CommandHistoriaClinica historiaClinica) {
-        HistoriaClinicaEntity historiaClinicaEntity = modelMapper.map(historiaClinica , HistoriaClinicaEntity.class);
-        repositorioHistoriaClinicaJpa.save(historiaClinicaEntity);
-    }
+
 }

@@ -1,11 +1,10 @@
 package com.veterinaria.veterinaria.infraestructura.controller;
 
 import com.veterinaria.veterinaria.aplicacion.command.CommandPaciente;
-import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioActualizarPaciente;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioCrearPaciente;
-import com.veterinaria.veterinaria.dominio.servicio.ServicioEliminarPaciente;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioListarPaciente;
+import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPacienteJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +20,12 @@ public class PacienteController {
     @Autowired
     public ServicioCrearPaciente servicioCrearPaciente;
 
-    @Autowired
-    public ServicioEliminarPaciente servicioEliminarPaciente;
 
     @Autowired
     public ServicioActualizarPaciente servicioActualizarPaciente;
+
+    @Autowired
+    public RepositorioPacienteJpa repositorioPacienteJpa;
 
     @GetMapping()
     public List<CommandPaciente> listar() {
@@ -33,32 +33,18 @@ public class PacienteController {
     }
 
 
-    @PostMapping("/registrar")
-    public String registroPaciente(@RequestBody CommandPaciente commandPaciente){
-        return servicioCrearPaciente.registrarPaciente(commandPaciente);
+    @PostMapping()
+    public void registroPaciente(@RequestBody CommandPaciente commandPaciente){
+        servicioCrearPaciente.registrarPaciente(commandPaciente);
     }
 
-    @DeleteMapping("/{id}/eliminar" )
+    @DeleteMapping(value = "/{id}" )
     public void eliminarPaciente(@PathVariable Integer id){
-        CommandPaciente paciente = null;
-        for (CommandPaciente pacienteID: listar())
-        {
-            if (pacienteID.getCodigoPaciente().equals(id)){
-                paciente = pacienteID;
-            }
-        }
-        servicioEliminarPaciente.ejecutar(paciente);
+        repositorioPacienteJpa.deleteById(id);
     }
 
-    @PutMapping("/{id}/actualizar")
-    public void actualizarPaciente(@PathVariable Integer id){
-        CommandPaciente paciente = null;
-        for (CommandPaciente pacienteID: listar())
-        {
-            if (pacienteID.getCodigoPaciente().equals(id)){
-                paciente = pacienteID;
-            }
-        }
+    @PutMapping(value = "/{id}")
+    public void actualizarPaciente(@PathVariable Integer id, @RequestBody CommandPaciente paciente){
         servicioActualizarPaciente.ejecutar(paciente);
     }
 }

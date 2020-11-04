@@ -35,24 +35,6 @@ public class RepositorioPropietariolmpl implements RepositorioPropietario {
         repositorioPropietarioJpa.save(propietarioEntity);
     }
 
-    @Override
-    public void eliminar(CommandPropietario propietario) {
-        PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
-        repositorioPropietarioJpa.delete(propietarioEntity);
-    }
-
-    @Override
-    public void actualizar(CommandPropietario propietario) {
-        PropietarioEntity propietarioEntity = new PropietarioEntity();
-        propietarioEntity.setId(propietario.getId());
-        propietarioEntity.setNombre(propietario.getNombre());
-        propietarioEntity.setApellido(propietario.getApellido());
-        propietarioEntity.setTelefono(propietario.getTelefono());
-        propietarioEntity.setEmail(propietario.getEmail());
-        propietarioEntity.setDireccion(propietario.getDireccion());
-        //PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
-        repositorioPropietarioJpa.save(propietarioEntity);
-    }
 
     @Override
     public List<CommandPropietario> buscaPorNombre(String nombre) {
