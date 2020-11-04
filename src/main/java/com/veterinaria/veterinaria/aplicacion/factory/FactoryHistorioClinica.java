@@ -11,10 +11,9 @@ import java.util.List;
 public class FactoryHistorioClinica {
 
 
-
     public List<CommandHistoriaClinica> entityToCommand(List<HistoriaClinicaEntity> listaHistoriaClinicaEntity) {
         List<CommandHistoriaClinica> listaCommandHistoriaClinica = new ArrayList<>();
-        for(HistoriaClinicaEntity historiaClinicaEntity: listaHistoriaClinicaEntity){
+        for (HistoriaClinicaEntity historiaClinicaEntity : listaHistoriaClinicaEntity) {
             listaCommandHistoriaClinica.add(entityToCommand(historiaClinicaEntity));
         }
         return listaCommandHistoriaClinica;

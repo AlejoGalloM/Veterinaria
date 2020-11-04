@@ -3,7 +3,6 @@ package com.veterinaria.veterinaria.dominio.repositoriopuerto;
 import com.veterinaria.veterinaria.aplicacion.command.CommandPropietario;
 import com.veterinaria.veterinaria.dominio.modelo.Propietario;
 import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
-import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPropietarioJpa;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 

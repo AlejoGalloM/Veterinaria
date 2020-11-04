@@ -13,13 +13,13 @@ public class FactoryPaciente {
 
     public List<CommandPaciente> entityToCommand(List<PacienteEntity> listaPaciente) {
         List<CommandPaciente> listaCommandPaciente = new ArrayList<>();
-        for(PacienteEntity pacienteEntity : listaPaciente){
+        for (PacienteEntity pacienteEntity : listaPaciente) {
             listaCommandPaciente.add(entityToCommand(pacienteEntity));
         }
         return listaCommandPaciente;
     }
 
-    private CommandPaciente entityToCommand(PacienteEntity pacienteEntity){
+    private CommandPaciente entityToCommand(PacienteEntity pacienteEntity) {
         CommandPaciente commandPaciente = new CommandPaciente();
         commandPaciente.setCodigoPaciente(pacienteEntity.getCodigoPaciente());
         commandPaciente.setEspecie(pacienteEntity.getEspecie());

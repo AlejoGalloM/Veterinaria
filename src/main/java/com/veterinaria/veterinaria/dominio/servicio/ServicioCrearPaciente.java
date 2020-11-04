@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ServicioCrearPaciente {
 
-    private static final String ESPECIE_PACIENTE_OBLIGATORIO= "Es necesario ingresar la specie del paciente";
+    private static final String ESPECIE_PACIENTE_OBLIGATORIO = "Es necesario ingresar la specie del paciente";
     private static final String PACIENTE_REGISTRADO = "El paciente indicado ya se encuentra registrado en el sistema";
     private static final String PACINETE_REGISTRADO_EXITOSAMENTE = "El paciente se ha registrado exitosamente";
     private static final String PROPIETARIO_NO_REGISTRADO = "El propietario ingresado no se encuentra registrado en el sistema";
@@ -39,7 +39,7 @@ public class ServicioCrearPaciente {
     public FactoryPropietario factoryPropietario;
 
 
-    public String registrarPaciente(CommandPaciente commandPaciente) {
+    public void registrarPaciente(CommandPaciente commandPaciente) {
         validarPacienteCreado(commandPaciente);
         validarEspeciePaciente(commandPaciente.getEspecie());
         validarPropietarioNoRegistrado(commandPaciente.getPropietario());
@@ -51,11 +51,11 @@ public class ServicioCrearPaciente {
         pacienteEntity.setPeso(commandPaciente.getPeso());
         pacienteEntity.setRaza(commandPaciente.getRaza());
         repositorioPaciente.save(pacienteEntity);
-        return PACINETE_REGISTRADO_EXITOSAMENTE;
+
     }
 
     private void validarEspeciePaciente(String especie) {
-        if(("").equals(especie)){
+        if (("").equals(especie)) {
             throw new ExcepcionEspeciePacienteObligatoria(ESPECIE_PACIENTE_OBLIGATORIO);
         }
     }
@@ -63,10 +63,10 @@ public class ServicioCrearPaciente {
     private void validarPacienteCreado(CommandPaciente commandPaciente) {
 
         List<CommandPaciente> listapacientes = servicioListarPaciente.findAll();
-            for (CommandPaciente paciente:listapacientes) {
-                if(commandPaciente.equals(paciente)) {
-                    throw  new ExcepcionPacienteRegistrado(PACIENTE_REGISTRADO);
-                }
+        for (CommandPaciente paciente : listapacientes) {
+            if (commandPaciente.equals(paciente)) {
+                throw new ExcepcionPacienteRegistrado(PACIENTE_REGISTRADO);
+            }
         }
 
     }
@@ -74,13 +74,13 @@ public class ServicioCrearPaciente {
     private void validarPropietarioNoRegistrado(Integer codigoPropietario) {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
-        for (CommandPropietario propietario: listaPropietarios) {
-            if(codigoPropietario.equals(propietario.getId())){
-                encontrado=true;
+        for (CommandPropietario propietario : listaPropietarios) {
+            if (codigoPropietario.equals(propietario.getId())) {
+                encontrado = true;
                 break;
             }
         }
-        if(!encontrado){
+        if (!encontrado) {
             throw new ExcepcionPropietarioNoRegistrado(PROPIETARIO_NO_REGISTRADO);
         }
     }

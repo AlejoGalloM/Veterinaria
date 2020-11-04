@@ -19,7 +19,6 @@ public class ServicioListarHistoriaClinica {
 
     public List<CommandHistoriaClinica> findAll() {
         return factoryHistorioClinica.entityToCommand(repositorioHistoriaClinica.listar());
-
     }
 
 }

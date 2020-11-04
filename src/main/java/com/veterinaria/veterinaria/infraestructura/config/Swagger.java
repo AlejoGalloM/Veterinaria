@@ -14,15 +14,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger {
 
-    public Docket api(){
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-            .apis(RequestHandlerSelectors.basePackage("com.veterinaria.veterinaria.infraestructura.controller"))
-                .paths(PathSelectors.regex( "/.*"))
+                .apis(RequestHandlerSelectors.basePackage("com.veterinaria.veterinaria.infraestructura.controller"))
+                .paths(PathSelectors.regex("/.*"))
                 .build().apiInfo(apiEndPointsInfo());
 
     }
 
-    private ApiInfo apiEndPointsInfo(){
+    private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("API de veterinaria")
                 .description("Servicio para consultar información relacionada a la veterinaria")
                 .contact(new Contact("SW 3", "www.veterinaria.com", "algo@gmail.com"))

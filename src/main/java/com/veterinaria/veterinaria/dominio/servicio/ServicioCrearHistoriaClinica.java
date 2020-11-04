@@ -62,14 +62,14 @@ public class ServicioCrearHistoriaClinica {
         List<CommandPaciente> listaPacientes = servicioListarPaciente.findAll();
         boolean registrado = false;
         for (CommandPaciente paciente : listaPacientes) {
-            if(paciente.getCodigoPaciente().equals(codigoPaciente)){
+            if (paciente.getCodigoPaciente().equals(codigoPaciente)) {
                 registrado = true;
                 agregarPaciente(paciente);
                 break;
             }
 
         }
-        if(!registrado){
+        if (!registrado) {
 
             throw new ExcepcionPacienteNoRegistrado(PACIENTE_NO_REGISTRADO);
         }
@@ -82,20 +82,20 @@ public class ServicioCrearHistoriaClinica {
     private void validarPropietarioNoRegistrado(Integer codigoPropietario) {
         List<CommandPropietario> listaPropietarios = servicioListarPropietario.findAll();
         boolean encontrado = false;
-        for (CommandPropietario propietario: listaPropietarios) {
-            if(codigoPropietario.equals(propietario.getId())){
-                encontrado=true;
-                this.propietario=propietario;
+        for (CommandPropietario propietario : listaPropietarios) {
+            if (codigoPropietario.equals(propietario.getId())) {
+                encontrado = true;
+                this.propietario = propietario;
                 break;
             }
         }
-        if(!encontrado){
+        if (!encontrado) {
             throw new ExcepcionPropietarioNoRegistrado(PROPIETARIO_NO_REGISTRADO);
         }
     }
 
     private void validarPropietarioNoNulo(Integer codigoPropietario) {
-        if(codigoPropietario==null){
+        if (codigoPropietario == null) {
             throw new ExcepcionNombrePropietarioObligatorio(IDENTIFICACION_PACIENTE_OBLIGATORIA);
         }
     }
