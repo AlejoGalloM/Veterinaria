@@ -6,8 +6,6 @@ import com.veterinaria.veterinaria.dominio.repositoriopuerto.RepositorioPropieta
 import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioPropietarioJpa;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 
@@ -22,16 +20,18 @@ public class RepositorioPropietariolmpl implements RepositorioPropietario {
     public RepositorioPropietarioJpa repositorioPropietarioJpa;
     public RepositorioPropietario repositorioPropietario;
 
-    public RepositorioPropietariolmpl (RepositorioPropietarioJpa repositorioPropietarioJpa){
+    public RepositorioPropietariolmpl(RepositorioPropietarioJpa repositorioPropietarioJpa) {
         this.repositorioPropietarioJpa = repositorioPropietarioJpa;
     }
 
     @Override
-    public List<PropietarioEntity> listar() { return repositorioPropietarioJpa.findAll(); }
+    public List<PropietarioEntity> listar() {
+        return repositorioPropietarioJpa.findAll();
+    }
 
     @Override
     public void guardar(Propietario propietario) {
-        PropietarioEntity propietarioEntity = modelMapper.map(propietario ,PropietarioEntity.class);
+        PropietarioEntity propietarioEntity = modelMapper.map(propietario, PropietarioEntity.class);
         repositorioPropietarioJpa.save(propietarioEntity);
     }
 

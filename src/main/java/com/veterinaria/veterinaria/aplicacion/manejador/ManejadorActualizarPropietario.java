@@ -16,7 +16,7 @@ public class ManejadorActualizarPropietario {
     @Autowired
     private FactoryPropietario factoryPropietario;
 
-    public void ejecutar(CommandPropietario commandPropietario, Integer id){
+    public void ejecutar(CommandPropietario commandPropietario, Integer id) {
         commandPropietario.setId(id);
         commandPropietario.setNombre(commandPropietario.getNombre());
         commandPropietario.setApellido(commandPropietario.getApellido());

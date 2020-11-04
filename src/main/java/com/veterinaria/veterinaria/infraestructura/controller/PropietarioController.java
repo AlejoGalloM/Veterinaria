@@ -40,26 +40,28 @@ public class PropietarioController {
     }
 
     @GetMapping()
-    public List<CommandPropietario> listar() { return servicioListarPropietario.findAll();}
+    public List<CommandPropietario> listar() {
+        return servicioListarPropietario.findAll();
+    }
 
-    @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE )
+    @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public void registroPropietario(@RequestBody CommandPropietario commandPropietario){
+    public void registroPropietario(@RequestBody CommandPropietario commandPropietario) {
         this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
     }
 
     @GetMapping("/buscar/{nombre}")
-    public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) { return this.servicioListarPropietarioPorNombre.ejecutar(nombre);}
+    public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) {
+        return this.servicioListarPropietarioPorNombre.ejecutar(nombre);
+    }
 
-    @DeleteMapping(value = "/{id}" )
-    public void eliminarPropietario(@PathVariable Integer id){
+    @DeleteMapping(value = "/{id}")
+    public void eliminarPropietario(@PathVariable Integer id) {
         repositorioPropietarioJpa.deleteById(id);
     }
 
     @PutMapping(value = "/{id}")
-    public void actualizarPropietario(@PathVariable Integer id, @RequestBody CommandPropietario propietario){
-
+    public void actualizarPropietario(@PathVariable Integer id, @RequestBody CommandPropietario propietario) {
         this.manejadorActualizarPropietario.ejecutar(propietario, id);
-
     }
 }

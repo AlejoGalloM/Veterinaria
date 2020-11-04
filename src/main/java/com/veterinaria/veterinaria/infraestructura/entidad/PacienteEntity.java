@@ -31,6 +31,6 @@ public class PacienteEntity {
     @Column(name = "pesoPte", nullable = false)
     private int peso;
 
-    @Column(name = "CODIGO_PROPIETARIO_ID", nullable =  false)
+    @Column(name = "CODIGO_PROPIETARIO_ID", nullable = false)
     private Integer codigoPropietario;
 }

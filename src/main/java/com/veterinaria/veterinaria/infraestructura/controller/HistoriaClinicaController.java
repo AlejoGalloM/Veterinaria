@@ -1,8 +1,6 @@
 package com.veterinaria.veterinaria.infraestructura.controller;
 
 import com.veterinaria.veterinaria.aplicacion.command.CommandHistoriaClinica;
-import com.veterinaria.veterinaria.aplicacion.command.CommandPaciente;
-import com.veterinaria.veterinaria.dominio.servicio.ServicioActualizarHistoriaClinica;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioCrearHistoriaClinica;
 import com.veterinaria.veterinaria.dominio.servicio.ServicioListarHistoriaClinica;
 import com.veterinaria.veterinaria.infraestructura.repositoriojpa.RepositorioHistoriaClinicaJpa;
@@ -19,31 +17,28 @@ public class HistoriaClinicaController {
     public ServicioListarHistoriaClinica servicioListarHistoriaClinica;
 
     @Autowired
-    public ServicioActualizarHistoriaClinica servicioActualizarHistoriaClinica;
-
-    @Autowired
     public ServicioCrearHistoriaClinica servicioCrearHistoriaClinica;
 
     @Autowired
     public RepositorioHistoriaClinicaJpa repositorioHistoriaClinicaJpa;
 
     @GetMapping()
-    public List<CommandHistoriaClinica> listar(){
-       return servicioListarHistoriaClinica.findAll();
+    public List<CommandHistoriaClinica> listar() {
+        return servicioListarHistoriaClinica.findAll();
     }
 
     @PostMapping()
-    public String regitrarHistoriaClinica(@RequestBody  CommandHistoriaClinica commandHistoriaClinica){
+    public String regitrarHistoriaClinica(@RequestBody CommandHistoriaClinica commandHistoriaClinica) {
         return servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 
-    @DeleteMapping("/{id}" )
-    public void eliminarHistoriaClinica(@PathVariable Integer id){
+    @DeleteMapping("/{id}")
+    public void eliminarHistoriaClinica(@PathVariable Integer id) {
         repositorioHistoriaClinicaJpa.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public void actualizarHistoriaClinica(@PathVariable Integer id, @RequestBody CommandHistoriaClinica commandHistoriaClinica){
+    public void actualizarHistoriaClinica(@PathVariable Integer id, @RequestBody CommandHistoriaClinica commandHistoriaClinica) {
         servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 

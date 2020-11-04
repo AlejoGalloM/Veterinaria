@@ -12,7 +12,7 @@ public class ServicioListarPropietarioPorNombre {
     @Autowired
     private RepositorioPropietario repositorioPropietario;
 
-    public List<CommandPropietario> ejecutar(String nombre){
+    public List<CommandPropietario> ejecutar(String nombre) {
         return this.repositorioPropietario.buscaPorNombre(nombre);
     }
 }

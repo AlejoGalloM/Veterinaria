@@ -17,7 +17,7 @@ public class ManejadorRegistrarPropietario {
         this.factoryPropietario = factoryPropietario;
     }
 
-    public void ejecutar(CommandPropietario commandPropietario){
+    public void ejecutar(CommandPropietario commandPropietario) {
         Propietario propietario = this.factoryPropietario.crear(commandPropietario);
         this.servicioCrearPropietario.ejecutar(propietario);
     }

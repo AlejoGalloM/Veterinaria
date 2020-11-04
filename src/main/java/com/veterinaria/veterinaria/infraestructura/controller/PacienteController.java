@@ -34,17 +34,17 @@ public class PacienteController {
 
 
     @PostMapping()
-    public void registroPaciente(@RequestBody CommandPaciente commandPaciente){
+    public void registroPaciente(@RequestBody CommandPaciente commandPaciente) {
         servicioCrearPaciente.registrarPaciente(commandPaciente);
     }
 
-    @DeleteMapping(value = "/{id}" )
-    public void eliminarPaciente(@PathVariable Integer id){
+    @DeleteMapping(value = "/{id}")
+    public void eliminarPaciente(@PathVariable Integer id) {
         repositorioPacienteJpa.deleteById(id);
     }
 
     @PutMapping(value = "/{id}")
-    public void actualizarPaciente(@PathVariable Integer id, @RequestBody CommandPaciente paciente){
+    public void actualizarPaciente(@PathVariable Integer id, @RequestBody CommandPaciente paciente) {
         servicioActualizarPaciente.ejecutar(paciente);
     }
 }

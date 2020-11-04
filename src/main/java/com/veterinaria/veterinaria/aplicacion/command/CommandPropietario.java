@@ -7,7 +7,10 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter @NoArgsConstructor @AllArgsConstructor @Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
 public class CommandPropietario {
 
     private String nombre;

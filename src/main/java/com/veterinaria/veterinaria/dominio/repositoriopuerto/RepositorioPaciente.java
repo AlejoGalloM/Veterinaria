@@ -11,7 +11,4 @@ public interface RepositorioPaciente {
 
     void save(PacienteEntity pacienteEntity);
 
-    void eliminar(CommandPaciente commandPaciente);
-
-    void actualizar(CommandPaciente commandPaciente);
 }
