@@ -22,6 +22,7 @@ public class PropietarioController {
     private final ServicioActualizarPropietario servicioActualizarPropietario;
     private final ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre;
     private final RepositorioPropietarioJpa repositorioPropietarioJpa;
+    private final ServicioBuscarPropietarioPorId servicioBuscarPropietarioPorId;
 
     public PropietarioController(ManejadorRegistrarPropietario manejadorRegistrarPropietario,
                                  ManejadorActualizarPropietario manejadorActualizarPropietario,
@@ -29,7 +30,7 @@ public class PropietarioController {
                                  ServicioCrearPropietario servicioCrearPropietario,
                                  ServicioActualizarPropietario servicioActualizarPropietario,
                                  ServicioListarPropietarioPorNombre servicioListarPropietarioPorNombre,
-                                 RepositorioPropietarioJpa repositorioPropietarioJpa) {
+                                 RepositorioPropietarioJpa repositorioPropietarioJpa, ServicioBuscarPropietarioPorId servicioBuscarPropietarioPorId) {
         this.manejadorRegistrarPropietario = manejadorRegistrarPropietario;
         this.manejadorActualizarPropietario = manejadorActualizarPropietario;
         this.servicioListarPropietario = servicioListarPropietario;
@@ -37,6 +38,7 @@ public class PropietarioController {
         this.servicioActualizarPropietario = servicioActualizarPropietario;
         this.servicioListarPropietarioPorNombre = servicioListarPropietarioPorNombre;
         this.repositorioPropietarioJpa = repositorioPropietarioJpa;
+        this.servicioBuscarPropietarioPorId = servicioBuscarPropietarioPorId;
     }
 
     @GetMapping()
@@ -50,9 +52,14 @@ public class PropietarioController {
         this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
     }
 
-    @GetMapping("/buscar/{nombre}")
+    @GetMapping("/buscar/nombre/{nombre}")
     public List<CommandPropietario> listarPorNombre(@PathVariable String nombre) {
         return this.servicioListarPropietarioPorNombre.ejecutar(nombre);
+    }
+
+    @GetMapping("/buscar/id/{id}")
+    public CommandPropietario listarPorId(@PathVariable Integer id){
+        return this.servicioBuscarPropietarioPorId.ejecutar(id);
     }
 
     @DeleteMapping(value = "/{id}")

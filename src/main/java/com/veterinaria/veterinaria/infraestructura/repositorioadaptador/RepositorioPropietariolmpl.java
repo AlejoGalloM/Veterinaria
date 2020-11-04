@@ -35,14 +35,14 @@ public class RepositorioPropietariolmpl implements RepositorioPropietario {
         repositorioPropietarioJpa.save(propietarioEntity);
     }
 
-
     @Override
-    public List<CommandPropietario> buscaPorNombre(String nombre) {
-        return repositorioPropietario.buscaPorNombre(nombre);
+    public void eliminar(CommandPropietario propietario) {
+
     }
 
     @Override
-    public CommandPropietario buscarPorId(Integer id) {
-        return null;
+    public void actualizar(CommandPropietario propietario) {
+
     }
+
 }

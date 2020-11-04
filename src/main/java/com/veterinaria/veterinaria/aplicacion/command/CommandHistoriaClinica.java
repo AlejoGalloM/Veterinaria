@@ -19,6 +19,7 @@ public class CommandHistoriaClinica {
     private String medicamentos;
     private Integer codigoPaciente;
     private Integer codigoPropietario;
+    private String fecha;
 
 
 }

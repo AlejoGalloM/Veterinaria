@@ -19,7 +19,7 @@ public class FactoryPropietario {
         return listaCommandPropietario;
     }
 
-    private CommandPropietario entityToCommand(PropietarioEntity propietarioEntity) {
+    public CommandPropietario entityToCommand(PropietarioEntity propietarioEntity) {
         CommandPropietario commandPropietario = new CommandPropietario();
         commandPropietario.setId(propietarioEntity.getId());
         commandPropietario.setNombre(propietarioEntity.getNombre());

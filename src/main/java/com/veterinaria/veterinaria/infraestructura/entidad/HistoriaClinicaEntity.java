@@ -25,6 +25,9 @@ public class HistoriaClinicaEntity {
     @Column(name = "medicamentos", nullable = false)
     private String medicamentos;
 
+    @Column(name = "fecha", nullable = false)
+    private String fecha;
+
     @JoinColumn
     private Integer codigoPaciente;
 

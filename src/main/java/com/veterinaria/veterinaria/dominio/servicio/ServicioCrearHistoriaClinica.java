@@ -53,6 +53,7 @@ public class ServicioCrearHistoriaClinica {
         historiaClinicaEntity.setCodigoPaciente(commandHistoriaClinica.getCodigoPaciente());
         historiaClinicaEntity.setMedicamentos(commandHistoriaClinica.getMedicamentos());
         historiaClinicaEntity.setProcedimientos(commandHistoriaClinica.getProcedimientos());
+        historiaClinicaEntity.setFecha(commandHistoriaClinica.getFecha());
         repositorioHistoriaClinica.save(historiaClinicaEntity);
         return HISTORIA_CLINICA_CREADA_EXITOSAMENTE;
 
