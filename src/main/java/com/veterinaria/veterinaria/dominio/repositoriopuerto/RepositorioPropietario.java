@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface RepositorioPropietario{
+public interface RepositorioPropietario {
 
     List<PropietarioEntity> listar();
 
@@ -19,10 +19,7 @@ public interface RepositorioPropietario{
 
     void actualizar(CommandPropietario propietario);
 
-    @Query("select PropietarioEntity from PropietarioEntity  where PropietarioEntity.nombre like :nombre")
-    List<CommandPropietario> buscaPorNombre(@Param("nombre") String nombre);
 
-    @Query("select PropietarioEntity from PropietarioEntity  where PropietarioEntity.id = id")
-    CommandPropietario buscarPorId(@Param("id") Integer id);
+
 }
 
