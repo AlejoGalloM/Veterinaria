@@ -14,7 +14,7 @@ public class ServicioActualizarPaciente {
     @Autowired
     private ServicioCrearPaciente servicioCrearPaciente;
 
-    public void ejecutar(CommandPaciente paciente) {
-        this.servicioCrearPaciente.registrarPaciente(paciente);
+    public String ejecutar(CommandPaciente paciente) {
+        return this.servicioCrearPaciente.registrarPaciente(paciente);
     }
 }

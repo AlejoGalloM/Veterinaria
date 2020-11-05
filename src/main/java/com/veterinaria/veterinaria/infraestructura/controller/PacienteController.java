@@ -40,18 +40,19 @@ public class PacienteController {
 
 
     @PostMapping()
-    public void registroPaciente(@RequestBody CommandPaciente commandPaciente) {
-        servicioCrearPaciente.registrarPaciente(commandPaciente);
+    public String registroPaciente(@RequestBody CommandPaciente commandPaciente) {
+        return servicioCrearPaciente.registrarPaciente(commandPaciente);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void eliminarPaciente(@PathVariable Integer id) {
+    public String eliminarPaciente(@PathVariable Integer id) {
         repositorioPacienteJpa.deleteById(id);
+        return servicioCrearPaciente.eliminarPaciente();
     }
 
     @PutMapping(value = "/{id}")
-    public void actualizarPaciente(@PathVariable Integer id, @RequestBody CommandPaciente paciente) {
-        servicioActualizarPaciente.ejecutar(paciente);
+    public String actualizarPaciente(@PathVariable Integer id, @RequestBody CommandPaciente paciente) {
+        return servicioActualizarPaciente.ejecutar(paciente);
     }
 
     @GetMapping(value = "/buscar/propietario/{idPropietario}")

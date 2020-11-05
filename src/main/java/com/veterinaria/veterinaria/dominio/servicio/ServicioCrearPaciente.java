@@ -19,8 +19,10 @@ public class ServicioCrearPaciente {
 
     private static final String ESPECIE_PACIENTE_OBLIGATORIO = "Es necesario ingresar la specie del paciente";
     private static final String PACIENTE_REGISTRADO = "El paciente indicado ya se encuentra registrado en el sistema";
-    private static final String PACINETE_REGISTRADO_EXITOSAMENTE = "El paciente se ha registrado exitosamente";
+    private static final String PACINETE_REGISTRADO_EXITOSAMENTE = "El paciente se ha guardado exitosamente";
     private static final String PROPIETARIO_NO_REGISTRADO = "El propietario ingresado no se encuentra registrado en el sistema";
+    private static final String PACIENTE_ELIMINADO = "El paciente se ha eliminado exitosamente";
+
     private CommandPropietario propietario;
 
     @Autowired
@@ -39,7 +41,7 @@ public class ServicioCrearPaciente {
     public FactoryPropietario factoryPropietario;
 
 
-    public void registrarPaciente(CommandPaciente commandPaciente) {
+    public String registrarPaciente(CommandPaciente commandPaciente) {
         validarPacienteCreado(commandPaciente);
         validarEspeciePaciente(commandPaciente.getEspecie());
         validarPropietarioNoRegistrado(commandPaciente.getPropietario());
@@ -51,7 +53,11 @@ public class ServicioCrearPaciente {
         pacienteEntity.setPeso(commandPaciente.getPeso());
         pacienteEntity.setRaza(commandPaciente.getRaza());
         repositorioPaciente.save(pacienteEntity);
+        return PACINETE_REGISTRADO_EXITOSAMENTE;
+    }
 
+    public String eliminarPaciente(){
+        return PACIENTE_ELIMINADO;
     }
 
     private void validarEspeciePaciente(String especie) {

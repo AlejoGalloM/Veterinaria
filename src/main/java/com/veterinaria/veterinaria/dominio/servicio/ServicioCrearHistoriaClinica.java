@@ -22,7 +22,7 @@ public class ServicioCrearHistoriaClinica {
     private static final String IDENTIFICACION_PACIENTE_OBLIGATORIA = "La identificación del paciente es obligatoria";
     private static final String PROPIETARIO_NO_REGISTRADO = "El propietario ingresado no se encuentra registrado en el sistema";
     private static final String PACIENTE_NO_REGISTRADO = "El paciente ingresado no se encuentra registrado en el  se";
-    private static final String HISTORIA_CLINICA_CREADA_EXITOSAMENTE = "La historia Clinica ha sido creada con éxito ";
+    private static final String HISTORIA_CLINICA_CREADA_EXITOSAMENTE = "La historia Clinica se ha guardado con exito éxito ";
     private CommandPropietario propietario;
     private CommandPaciente paciente;
     @Autowired
