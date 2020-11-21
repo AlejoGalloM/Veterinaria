@@ -43,8 +43,8 @@ public class PropietarioController {
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public String registroPropietario(@RequestBody CommandPropietario commandPropietario) {
-        return this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
+    public void registroPropietario(@RequestBody CommandPropietario commandPropietario) {
+        this.manejadorRegistrarPropietario.ejecutar(commandPropietario);
     }
 
     @GetMapping(value = "/buscar/nombre/{nombre}")
@@ -63,7 +63,7 @@ public class PropietarioController {
     }
 
     @PutMapping(value = "/{id}")
-    public String actualizarPropietario(@PathVariable Integer id, @RequestBody CommandPropietario propietario) {
-        return this.manejadorActualizarPropietario.ejecutar(propietario, id);
+    public void actualizarPropietario(@PathVariable Integer id, @RequestBody CommandPropietario propietario) {
+        this.manejadorActualizarPropietario.ejecutar(propietario, id);
     }
 }

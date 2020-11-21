@@ -43,7 +43,7 @@ public class ServicioCrearHistoriaClinica {
     @Autowired
     FactoryPaciente factoryPaciente;
 
-    public String registrarHistoriaClinica(CommandHistoriaClinica commandHistoriaClinica) {
+    public void registrarHistoriaClinica(CommandHistoriaClinica commandHistoriaClinica) {
         validarPropietarioNoNulo(commandHistoriaClinica.getCodigoPropietario());
         validarPropietarioNoRegistrado(commandHistoriaClinica.getCodigoPropietario());
         validarPacinteNoRegistrado(commandHistoriaClinica.getCodigoPaciente());
@@ -55,7 +55,6 @@ public class ServicioCrearHistoriaClinica {
         historiaClinicaEntity.setProcedimientos(commandHistoriaClinica.getProcedimientos());
         historiaClinicaEntity.setFecha(commandHistoriaClinica.getFecha());
         repositorioHistoriaClinica.save(historiaClinicaEntity);
-        return HISTORIA_CLINICA_CREADA_EXITOSAMENTE;
 
     }
 

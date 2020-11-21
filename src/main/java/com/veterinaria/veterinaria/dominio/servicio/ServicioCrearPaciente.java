@@ -41,7 +41,7 @@ public class ServicioCrearPaciente {
     public FactoryPropietario factoryPropietario;
 
 
-    public String registrarPaciente(CommandPaciente commandPaciente) {
+    public void registrarPaciente(CommandPaciente commandPaciente) {
         validarPacienteCreado(commandPaciente);
         validarEspeciePaciente(commandPaciente.getEspecie());
         validarPropietarioNoRegistrado(commandPaciente.getPropietario());
@@ -53,7 +53,6 @@ public class ServicioCrearPaciente {
         pacienteEntity.setPeso(commandPaciente.getPeso());
         pacienteEntity.setRaza(commandPaciente.getRaza());
         repositorioPaciente.save(pacienteEntity);
-        return PACINETE_REGISTRADO_EXITOSAMENTE;
     }
 
     public String eliminarPaciente(){

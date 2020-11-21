@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ManejadorRegistrarPropietario {
-    private static final String PROPIETARIO_REGISTRADO = "El paciente se ha guardo exitosamente";
+
     private final ServicioCrearPropietario servicioCrearPropietario;
     private final FactoryPropietario factoryPropietario;
 
@@ -17,10 +17,9 @@ public class ManejadorRegistrarPropietario {
         this.factoryPropietario = factoryPropietario;
     }
 
-    public String ejecutar(CommandPropietario commandPropietario) {
+    public void ejecutar(CommandPropietario commandPropietario) {
         Propietario propietario = this.factoryPropietario.crear(commandPropietario);
         this.servicioCrearPropietario.ejecutar(propietario);
-        return PROPIETARIO_REGISTRADO;
     }
 
 }

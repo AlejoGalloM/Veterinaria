@@ -15,9 +15,8 @@ public class ManejadorActualizarPropietario {
 
     @Autowired
     private FactoryPropietario factoryPropietario;
-    private static final String PROPIETARIO_REGISTRADO = "El paciente se ha guardo exitosamente";
 
-    public String ejecutar(CommandPropietario commandPropietario, Integer id) {
+    public void ejecutar(CommandPropietario commandPropietario, Integer id) {
         commandPropietario.setId(id);
         commandPropietario.setNombre(commandPropietario.getNombre());
         commandPropietario.setApellido(commandPropietario.getApellido());
@@ -27,7 +26,5 @@ public class ManejadorActualizarPropietario {
 
         Propietario propietario = this.factoryPropietario.crear(commandPropietario);
         this.servicioActualizarPropietario.ejecutar(propietario);
-
-        return PROPIETARIO_REGISTRADO;
     }
 }

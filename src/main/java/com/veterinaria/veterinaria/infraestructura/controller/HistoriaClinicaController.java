@@ -37,8 +37,8 @@ public class HistoriaClinicaController {
     }
 
     @PostMapping()
-    public String regitrarHistoriaClinica(@RequestBody CommandHistoriaClinica commandHistoriaClinica) {
-        return servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
+    public void regitrarHistoriaClinica(@RequestBody CommandHistoriaClinica commandHistoriaClinica) {
+        servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 
     @DeleteMapping(value = "/{id}")
@@ -47,8 +47,8 @@ public class HistoriaClinicaController {
     }
 
     @PutMapping(value = "/{id}")
-    public String actualizarHistoriaClinica(@PathVariable Integer id, @RequestBody CommandHistoriaClinica commandHistoriaClinica) {
-        return servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
+    public void actualizarHistoriaClinica(@PathVariable Integer id, @RequestBody CommandHistoriaClinica commandHistoriaClinica) {
+       servicioCrearHistoriaClinica.registrarHistoriaClinica(commandHistoriaClinica);
     }
 
     @GetMapping(value = "/buscar/{fecha}")
