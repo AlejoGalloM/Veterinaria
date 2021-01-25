@@ -8,7 +8,7 @@ public class PacienteTestDataBuilder implements IPaciente {
     private String especie;
     private String raza;
     private Integer peso;
-    private Propietario propietario;
+    private Integer propietario;
     private Integer codigoPaciente;
 
 

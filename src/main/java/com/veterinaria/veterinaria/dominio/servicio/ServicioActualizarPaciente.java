@@ -15,6 +15,6 @@ public class ServicioActualizarPaciente {
     private ServicioCrearPaciente servicioCrearPaciente;
 
     public void ejecutar(CommandPaciente paciente) {
-        this.servicioCrearPaciente.registrarPaciente(paciente);
+       this.servicioCrearPaciente.registrarPaciente(paciente);
     }
 }

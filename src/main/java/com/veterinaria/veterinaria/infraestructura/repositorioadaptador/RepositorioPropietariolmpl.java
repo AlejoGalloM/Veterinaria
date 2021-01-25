@@ -34,15 +34,4 @@ public class RepositorioPropietariolmpl implements RepositorioPropietario {
         PropietarioEntity propietarioEntity = modelMapper.map(propietario, PropietarioEntity.class);
         repositorioPropietarioJpa.save(propietarioEntity);
     }
-
-
-    @Override
-    public List<CommandPropietario> buscaPorNombre(String nombre) {
-        return repositorioPropietario.buscaPorNombre(nombre);
-    }
-
-    @Override
-    public CommandPropietario buscarPorId(Integer id) {
-        return null;
-    }
 }

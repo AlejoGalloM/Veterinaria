@@ -26,6 +26,7 @@ public class FactoryHistorioClinica {
         commandHistoriaClinica.setCodigoPropietario(historiaClinicaEntity.getCodigoPropietario());
         commandHistoriaClinica.setMedicamentos(historiaClinicaEntity.getMedicamentos());
         commandHistoriaClinica.setProcedimientos(historiaClinicaEntity.getProcedimientos());
+        commandHistoriaClinica.setFecha(historiaClinicaEntity.getFecha());
 
         return commandHistoriaClinica;
     }

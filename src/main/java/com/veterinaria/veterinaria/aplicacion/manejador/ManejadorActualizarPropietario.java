@@ -26,6 +26,5 @@ public class ManejadorActualizarPropietario {
 
         Propietario propietario = this.factoryPropietario.crear(commandPropietario);
         this.servicioActualizarPropietario.ejecutar(propietario);
-
     }
 }
