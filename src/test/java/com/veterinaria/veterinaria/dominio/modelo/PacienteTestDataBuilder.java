@@ -3,7 +3,7 @@ package com.veterinaria.veterinaria.dominio.modelo;
 import lombok.Setter;
 
 @Setter
-public class PacienteTestDataBuilder  implements IPaciente{
+public class PacienteTestDataBuilder implements IPaciente {
     private String nombre;
     private String especie;
     private String raza;

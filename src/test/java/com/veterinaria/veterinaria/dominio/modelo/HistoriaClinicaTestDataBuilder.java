@@ -5,7 +5,7 @@ import com.veterinaria.veterinaria.infraestructura.entidad.PropietarioEntity;
 import lombok.Setter;
 
 @Setter
-public class HistoriaClinicaTestDataBuilder implements IHistoriaClinica  {
+public class HistoriaClinicaTestDataBuilder implements IHistoriaClinica {
 
     private String procedimientos;
     private String medicamentos;
